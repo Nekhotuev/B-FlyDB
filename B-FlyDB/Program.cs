@@ -57,7 +57,7 @@ namespace B_FlyDB
         public DbSet<Country> Countries { get; set; }
         public DbSet<City> Cities { get; set; }
         //public DbSet<Flight> Flights { get; set; }
-        //public DbSet<FlightTimeTable> FlightsTt { get; set; }
+        //public DbSet<TimeTable> FlightsTt { get; set; }
         //public DbSet<Plane> Planes { get; set; }
         //public DbSet<Seat> Seats { get; set; }
         //public DbSet<Reservation> Reservations { get; set; }

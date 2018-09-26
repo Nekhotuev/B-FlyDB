@@ -6,8 +6,12 @@ namespace B_FlyDB.Model
     {
         public PlaneConfiguration()
         {
-            Property(p => p.PlaneModel).IsRequired().HasMaxLength(30);
-            Property(p => p.PlaneModification).IsRequired().HasMaxLength(20);
+            Property(p => p.PlaneModel).IsRequired();
+            Property(p => p.PlaneModification).IsRequired();
+            Property(p => p.FirstBCSeat).IsRequired();
+            Property(p => p.LastBCSeat).IsRequired();
+            Property(p => p.FirstBCSeatRow).IsRequired();
+            Property(p => p.LastBCSeatRow).IsRequired();
             Property(p => p.FirstECSeat).IsRequired();
             Property(p => p.LastECSeat).IsRequired();
             Property(p => p.FirstECSeatRow).IsRequired();

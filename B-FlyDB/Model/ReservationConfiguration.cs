@@ -2,9 +2,9 @@
 
 namespace B_FlyDB.Model
 {
-    public class SeatConfiguration : EntityTypeConfiguration<Seat>
+    public class ReservationConfiguration : EntityTypeConfiguration<Reservation>
     {
-        public SeatConfiguration()
+        public ReservationConfiguration()
         {
             Property(p => p.Row).IsRequired();
             Property(p => p.Columnn).IsRequired();

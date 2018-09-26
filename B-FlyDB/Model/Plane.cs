@@ -16,6 +16,6 @@ namespace B_FlyDB.Model
         public int LastECSeatRow { get; set; }
         public char FirstECSeat { set; get; }
         public char LastECSeat { get; set; }
-        public ICollection<FlightTimeTable> FlightTT { get; set; }
+        public ICollection<Flight> Flights { get; set; }
     }
 }

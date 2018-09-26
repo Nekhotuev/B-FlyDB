@@ -9,6 +9,7 @@ namespace B_FlyDB.Model
         public Airport()
         {
             Terminals = new List<Terminal>();
+            Flights = new List<Flight>();
         }
 
         public Guid Id { get; set; }
@@ -17,5 +18,6 @@ namespace B_FlyDB.Model
         public Country Country { get; set; }
         public City City { get; set; }
         public ICollection<Terminal> Terminals { get; set; }
+        public ICollection<Flight> Flights { get; set; }
     }
 }

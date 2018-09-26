@@ -10,10 +10,12 @@ namespace B_FlyDB.Model
         public Gate()
         {
             Terminals = new List<Terminal>();
+            Flights = new List<Flight>();
         }
         
         public Guid Id { get; set; }
         public string Name { get; set; }
         public ICollection<Terminal> Terminals { get; set; }
+        public ICollection<Flight> Flights { get; set; }
     }
 }
