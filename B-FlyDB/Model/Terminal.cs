@@ -12,14 +12,16 @@ namespace B_FlyDB.Model
         {
             Airports = new List<Airport>();
             Gates = new List<Gate>();
-            Flights = new List<Flight>();
+            Departures = new List<Departure>();
+            Arrivals = new List<Arrival>();
         }
         
         public Guid Id { get; set; }
         public string Name { get; set; }
         public ICollection<Airport> Airports { get; set; }
         public ICollection<Gate> Gates { get; set; }
-        public ICollection<Flight> Flights { get; set; }
+        public ICollection<Departure> Departures { get; set; }
+        public ICollection<Arrival> Arrivals { get; set; }
     }
 }
 

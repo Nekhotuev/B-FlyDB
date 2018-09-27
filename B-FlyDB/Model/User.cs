@@ -7,6 +7,11 @@ namespace B_FlyDB.Model
 {
     public class User
     {
+        public User()
+        {
+            Reservations = new List<Reservation>();
+        }
+
         public Guid Id { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
@@ -20,5 +25,6 @@ namespace B_FlyDB.Model
         public int Zipcode { get; set; }
         public City City { get; set; }
         public string Address { get; set; }
+        public ICollection<Reservation> Reservations { get; set; }
     }
 }

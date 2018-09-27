@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Data.Entity.ModelConfiguration.Configuration;
 
 namespace B_FlyDB.Model
 {
@@ -9,14 +12,23 @@ namespace B_FlyDB.Model
             TimeTables = new List<TimeTable>();
         }
 
+        public Guid Id { get; set; }
+        public string Code { get; set; }
+        public double TicketPrice { get; set; }
+        public int MaxDiscount { get; set; }
+        public int SaleStartDay { get; set; }
+        public int SaleEndDay { get; set; }
+        public int DistanceInMile { get; set; }
+        public DateTime TimeOfFlight { get; set; }
+        public int LuggageAmount { get; set; }
+        public int LuggageMaxWeight { get; set; }
+        public int HandLuggageAmount { get; set; }
+        public int HandLuggageMaxWeight { get; set; }
+
+
         public ICollection<TimeTable> TimeTables { get; set; }
         public Plane Plane { get; set; }
-        public Airport DepartureAirport { get; set; }
-        public Terminal DepartureTerminal { get; set; }
-        public Gate DepartureGate { get; set; }
-        public Airport ArrivalAirport { get; set; }
-        public Terminal ArrivalTerminal { get; set; }
-        public Gate ArrivalGate { get; set; }
-
+        public Departure Departure { get; set; }
+        public Arrival Arrival { get; set; }
     }
 }

@@ -5,6 +5,11 @@ namespace B_FlyDB.Model
 {
     public class TimeTable
     {
+        public TimeTable()
+        {
+            Reservations = new List<Reservation>();
+        }
+
         public Guid Id { get; set; }
         public DateTime DepartureTime { get; set; }
         public DateTime ArrivalTime { get; set; }
