@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Data.Entity;
@@ -16,17 +17,6 @@ namespace B_FlyDB
         {
             using (BFlyContext db = new BFlyContext())
             {
-                
-                Country c1 = new Country(){Name = "Russia"};
-                db.Countries.Add(c1);
-                City city1 = new City(){Name = "Moscow", Country = c1};
-                db.Cities.Add(city1);
-                db.SaveChanges();
-                User u2 = new User(){Address = "1-ya Parkovaya, 12", BirthDate = new DateTime(1991, 06, 10), City = city1,
-                    FirstName = "Vasiliy", LastName = "Petrov", Email = "smaple@mail.ru", PassportId = "4400 385264",
-                    PhoneNumber = "285-634-582-135", Title = "Mr", Zipcode = 143300, Login = "deflog1", Password = "defPass1" };
-                db.Users.Add(u2);
-                db.SaveChanges();
                 
                 
             }
@@ -79,13 +69,77 @@ namespace B_FlyDB
             modelBuilder.Configurations.Add(new UserConfiguration());
             modelBuilder.Conventions.Add(new IdConvention());
             modelBuilder.Conventions.Add(new NameConvention());
-            
-            //modelBuilder.Entity<User>().HasRequired(p => p.Profile).WithRequiredPrincipal(p => p.User);
         }
     }
 
-    public class DbInitializer : DropCreateDatabaseAlways<BFlyContext>
+    public class DbInitializer : DropCreateDatabaseIfModelChanges<BFlyContext>
     {
-
+        protected override void Seed(BFlyContext db)
+        {
+            Country russiaCountry = new Country() { Name = "Russia" };
+            Country franceCountry = new Country() { Name = "France"};
+            Country netherlandsCountry = new Country() { Name = "Netherlands"};
+            Country germanyCountry = new Country() { Name = "Germany"};
+            Country bulgariaCountry = new Country() { Name = "Bulgaria"};
+            db.Countries.AddRange(new List<Country>(){russiaCountry, franceCountry, netherlandsCountry, germanyCountry, bulgariaCountry});
+            City moscowCity = new City() { Name = "Moscow", Country = russiaCountry };
+            City volgogradCity = new City() { Name = "Volgograd", Country = russiaCountry};
+            City saratovCity = new City() { Name = "Saratov", Country = russiaCountry};
+            City sochiCity = new City() { Name = "Sochi", Country = russiaCountry};
+            City amsterdamCity = new City() { Name = "Amsterdam", Country = netherlandsCountry};
+            City parisCity = new City() { Name = "Paris", Country = franceCountry};
+            City berlinCity = new City() { Name = "Berlin", Country = germanyCountry};
+            City frankfurtCity = new City() { Name = "Frankfurt", Country = germanyCountry};
+            City varnaCity = new City() { Name = "Varna", Country = bulgariaCountry};
+            db.Cities.AddRange(new List<City>() {moscowCity, volgogradCity, saratovCity, sochiCity, amsterdamCity, parisCity, berlinCity, frankfurtCity, varnaCity});
+            db.SaveChanges();
+            User u1 = new User()
+            {
+                Address = "1-ya Parkovaya, 12",
+                BirthDate = new DateTime(1991, 06, 10),
+                City = moscowCity,
+                FirstName = "Vasiliy",
+                LastName = "Petrov",
+                Email = "smaple@mail.ru",
+                PassportId = "4400 385264",
+                PhoneNumber = "285-634-582-135",
+                Title = "Mr",
+                Zipcode = 143300,
+                Login = "Petrov",
+                Password = "PeSuHe137YY"
+            };
+            User u2 = new User()
+            {
+                Address = "1-ya Parkovaya, 12",
+                BirthDate = new DateTime(1991, 06, 10),
+                City = moscowCity,
+                FirstName = "Vasiliy",
+                LastName = "Petrov",
+                Email = "smaple@mail.ru",
+                PassportId = "4400 385264",
+                PhoneNumber = "285-634-582-135",
+                Title = "Mr",
+                Zipcode = 143300,
+                Login = "Petrov",
+                Password = "PeSuHe137YY"
+            };
+            User u3 = new User()
+            {
+                Address = "1-ya Parkovaya, 12",
+                BirthDate = new DateTime(1991, 06, 10),
+                City = moscowCity,
+                FirstName = "Vasiliy",
+                LastName = "Petrov",
+                Email = "smaple@mail.ru",
+                PassportId = "4400 385264",
+                PhoneNumber = "285-634-582-135",
+                Title = "Mr",
+                Zipcode = 143300,
+                Login = "Petrov",
+                Password = "PeSuHe137YY"
+            };
+            db.Users.Add(u2);
+            db.SaveChanges();
+        }
     }
 }
