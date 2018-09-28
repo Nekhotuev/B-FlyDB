@@ -72,6 +72,48 @@ namespace B_FlyDB
         }
     }
 
+    public class ClassifiersInitializer : DropCreateDatabaseIfModelChanges<BFlyContext>
+    {
+        protected override void Seed(BFlyContext context)
+        {
+            Airport domodedovoAirport = new Airport();
+            Airport vnukovoAirport = new Airport();
+            Airport scheremetevoAirport = new Airport();
+            Airport volgAirport = new Airport();
+            Airport saratovAirport = new Airport();
+            Airport sochiAirport = new Airport();
+            Airport schipholAirport = new Airport();
+            Airport sharlDeGollAirport = new Airport();
+            Airport schonefieldAirport = new Airport();
+            Airport frankfurtOnMaineAirport = new Airport();
+            Airport letischeVarnAirport = new Airport();
+
+            Terminal aTerminal = new Terminal();
+            Terminal bTerminal = new Terminal();
+            Terminal cTerminal = new Terminal();
+            Terminal dTerminal = new Terminal();
+            Terminal eTerminal = new Terminal();
+
+            Gate gate1 = new Gate();
+            Gate gate2 = new Gate();
+            Gate gate3 = new Gate();
+            Gate gate4 = new Gate();
+            Gate gate5 = new Gate();
+            Gate gate6 = new Gate();
+            Gate gate7 = new Gate();
+            Gate gate8 = new Gate();
+            Gate gate9 = new Gate();
+            Gate gate10 = new Gate();
+            Gate gate11 = new Gate();
+            Gate gate12 = new Gate();
+            Gate gate13 = new Gate();
+            Gate gate14 = new Gate();
+            Gate gate15 = new Gate() {};
+            
+            
+        }
+    }
+
     public class DbInitializer : DropCreateDatabaseIfModelChanges<BFlyContext>
     {
         protected override void Seed(BFlyContext db)
@@ -96,13 +138,13 @@ namespace B_FlyDB
             User u1 = new User()
             {
                 Address = "1-ya Parkovaya, 12",
-                BirthDate = new DateTime(1991, 06, 10),
+                BirthDate = new DateTime(1964, 02, 18),
                 City = moscowCity,
                 FirstName = "Vasiliy",
                 LastName = "Petrov",
-                Email = "smaple@mail.ru",
+                Email = "petrov@mail.ru",
                 PassportId = "4400 385264",
-                PhoneNumber = "285-634-582-135",
+                PhoneNumber = "985-654-78-96",
                 Title = "Mr",
                 Zipcode = 143300,
                 Login = "Petrov",
@@ -110,35 +152,35 @@ namespace B_FlyDB
             };
             User u2 = new User()
             {
-                Address = "1-ya Parkovaya, 12",
-                BirthDate = new DateTime(1991, 06, 10),
-                City = moscowCity,
-                FirstName = "Vasiliy",
-                LastName = "Petrov",
-                Email = "smaple@mail.ru",
-                PassportId = "4400 385264",
-                PhoneNumber = "285-634-582-135",
+                Address = "Profsoyuznaya, 2",
+                BirthDate = new DateTime(1985, 09, 13),
+                City = volgogradCity,
+                FirstName = "Ivan",
+                LastName = "Nikolaev",
+                Email = "nikolaev@mail.ru",
+                PassportId = "4400 159753",
+                PhoneNumber = "915-123-45-69",
                 Title = "Mr",
-                Zipcode = 143300,
-                Login = "Petrov",
-                Password = "PeSuHe137YY"
+                Zipcode = 143200,
+                Login = "Nikola",
+                Password = "KvasReal77"
             };
             User u3 = new User()
             {
-                Address = "1-ya Parkovaya, 12",
-                BirthDate = new DateTime(1991, 06, 10),
-                City = moscowCity,
-                FirstName = "Vasiliy",
-                LastName = "Petrov",
-                Email = "smaple@mail.ru",
-                PassportId = "4400 385264",
+                Address = "Atlassian, 84",
+                BirthDate = new DateTime(1976, 05, 28),
+                City = berlinCity,
+                FirstName = "Jack",
+                LastName = "Anderson",
+                Email = "anderson@gmail.com",
+                PassportId = "415 8965741",
                 PhoneNumber = "285-634-582-135",
                 Title = "Mr",
-                Zipcode = 143300,
-                Login = "Petrov",
-                Password = "PeSuHe137YY"
+                Zipcode = 569208,
+                Login = "Anderson",
+                Password = "AAAA6793"
             };
-            db.Users.Add(u2);
+            db.Users.AddRange(new List<User>() { u1, u2, u3 });
             db.SaveChanges();
         }
     }
