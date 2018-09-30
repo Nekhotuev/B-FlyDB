@@ -8,7 +8,7 @@ namespace B_FlyDB.DAL
         public ClassifiersContext() : base("DefaultConnection") { }
         static ClassifiersContext()
         {
-            System.Data.Entity.Database.SetInitializer<ClassifiersContext>(new ClassifiersInitializer());
+            Database.SetInitializer<ClassifiersContext>(new ClassifiersInitializer());
         }
 
 

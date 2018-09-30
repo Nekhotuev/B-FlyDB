@@ -6,7 +6,7 @@ using B_FlyDB.Model;
 
 namespace B_FlyDB.DAL
 {
-    public class ClassifiersInitializer : DropCreateDatabaseIfModelChanges<ClassifiersContext>
+    public class ClassifiersInitializer : DropCreateDatabaseAlways<ClassifiersContext>
     {
         protected override void Seed(ClassifiersContext context)
         {
@@ -137,18 +137,19 @@ namespace B_FlyDB.DAL
             context.SaveChanges();
             
             //random generation of airport schemes for all airports
-            List<Airport> Airports = context.Airports.TakeWhile(a => a.Name != null).ToList();
-            List<Terminal> Terminals = context.Terminals.TakeWhile(t => t.Name != null).ToList();
+            List<Airport> Airports = context.Airports.ToList();
+            List<Terminal> Terminals = context.Terminals.ToList();
+            List<Gate> Gates = context.Gates.ToList();
             Random random = new Random();
             foreach (Airport airport in Airports)
             {
                 foreach (Terminal terminal in Terminals)
                 {
                     int gatesCount = random.Next(5, 15);
-                    for (int i = 1; i <= gatesCount; i++)
+                    for (int i = 0; i < gatesCount; i++)
                     {
                         AirportScheme airportScheme = new AirportScheme() { Airport = airport, Terminal = terminal,
-                            Gate = context.Gates.First(g => g.Name == i.ToString()) };
+                            Gate = Gates[i] };
                         context.AirportSchemes.Add(airportScheme);
                     }
                 }

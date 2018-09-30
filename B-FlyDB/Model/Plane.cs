@@ -10,7 +10,7 @@ namespace B_FlyDB.Model
             Flights = new List<Flight>();
         }
 
-        public Guid id { get; set; }
+        public Guid Id { get; set; }
         public string Manufacturer { get; set; }
         public string PlaneModel { get; set; }
         public string PlaneModification { get; set; }
