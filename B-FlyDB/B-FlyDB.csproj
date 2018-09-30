@@ -50,6 +50,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\ClassifiersContext.cs" />
+    <Compile Include="DAL\ClassifiersInitializer.cs" />
+    <Compile Include="Model\AirportScheme.cs" />
     <Compile Include="Model\Arrival.cs" />
     <Compile Include="Model\Departure.cs" />
     <Compile Include="Model\FlightConfiguration.cs" />

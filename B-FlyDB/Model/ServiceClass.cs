@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -6,9 +7,13 @@ namespace B_FlyDB.Model
 {
     public class ServiceClass
     {
-        [Key, ForeignKey("Reservation")]
-        public Guid ServiceClassId { get; set; }
+        public ServiceClass()
+        {
+            Reservations = new List<Reservation>();
+        }
+
+        public Guid Id { get; set; }
         public string Name { get; set; }
-        public Reservation Reservation { get; set; }
+        public ICollection<Reservation> Reservations { get; set; }
     }
 }

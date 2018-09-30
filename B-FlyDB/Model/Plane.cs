@@ -11,6 +11,7 @@ namespace B_FlyDB.Model
         }
 
         public Guid id { get; set; }
+        public string Manufacturer { get; set; }
         public string PlaneModel { get; set; }
         public string PlaneModification { get; set; }
         public int FirstBCSeatRow { get; set; }
@@ -21,7 +22,7 @@ namespace B_FlyDB.Model
         public int LastECSeatRow { get; set; }
         public string FirstECSeat { set; get; }
         public string LastECSeat { get; set; }
-        public double FuelConsumptionOnOneMile { get; set; }
+        public double FuelConsumptionPerKm { get; set; }
         public ICollection<Flight> Flights { get; set; }
     }
 }

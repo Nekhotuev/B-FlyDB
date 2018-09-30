@@ -8,7 +8,7 @@ namespace B_FlyDB.Model
     {
         public Airport()
         {
-            Terminals = new List<Terminal>();
+            AirportSchemes = new List<AirportScheme>();
             Departures = new List<Departure>();
             Arrivals = new List<Arrival>();
         }
@@ -18,7 +18,7 @@ namespace B_FlyDB.Model
         public string Code { get; set; }
         public Country Country { get; set; }
         public City City { get; set; }
-        public ICollection<Terminal> Terminals { get; set; }
+        public ICollection<AirportScheme> AirportSchemes { get; set; }
         public ICollection<Departure> Departures { get; set; }
         public ICollection<Arrival> Arrivals { get; set; }
     }
