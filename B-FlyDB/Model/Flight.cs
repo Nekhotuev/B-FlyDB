@@ -14,7 +14,7 @@ namespace B_FlyDB.Model
 
         public Guid Id { get; set; }
         public string Code { get; set; }
-        public double TicketPrice { get; set; }
+        public decimal TicketPrice { get; set; }
         public int MaxDiscount { get; set; }
         public int SaleStartDay { get; set; }
         public int SaleEndDay { get; set; }

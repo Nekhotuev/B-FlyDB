@@ -7,7 +7,7 @@ namespace B_FlyDB.Model
         public FlightConfiguration()
         {
             Property(p => p.Code).IsRequired().HasMaxLength(10);
-            Property(p => p.TicketPrice).IsRequired();
+            Property(p => p.TicketPrice).IsRequired().HasPrecision(11, 2);
             Property(p => p.MaxDiscount).IsRequired();
             Property(p => p.SaleStartDay).IsRequired();
             Property(p => p.SaleEndDay).IsRequired();
@@ -17,12 +17,6 @@ namespace B_FlyDB.Model
             Property(p => p.HandLuggageMaxWeight).IsRequired();
             Property(p => p.LuggageAmount).IsRequired();
             Property(p => p.LuggageMaxWeight).IsRequired();
-            //HasRequired(p => p.ArrivalAirport).WithMany(p => p.ArrivalFlights).HasForeignKey(p => p.ArrivalAirportId);
-            //HasRequired(p => p.ArrivalTerminal).WithMany(p => p.ArrivalFlights).HasForeignKey(p => p.ArrivalTerminalId);
-            //HasRequired(p => p.ArrivalGate).WithMany(p => p.ArrivalFlights).HasForeignKey(p => p.ArrivalGateId);
-            //HasRequired(p => p.DepartureAirport).WithMany(p => p.ArrivalFlights).HasForeignKey(p => p.DepartureAirportId);
-            //HasRequired(p => p.DepartureTerminal).WithMany(p => p.ArrivalFlights).HasForeignKey(p => p.DepartureTerminalId);
-            //HasRequired(p => p.DepartureGate).WithMany(p => p.ArrivalFlights).HasForeignKey(p => p.DepartureGateId);
         }
     }
 }

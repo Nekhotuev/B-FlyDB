@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="DAL\ClassifiersContext.cs" />
     <Compile Include="DAL\ClassifiersInitializer.cs" />
+    <Compile Include="DAL\FlightsContext.cs" />
     <Compile Include="Model\AirportScheme.cs" />
     <Compile Include="Model\Arrival.cs" />
     <Compile Include="Model\Departure.cs" />
@@ -83,5 +84,6 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

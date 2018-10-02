@@ -15,7 +15,7 @@ namespace B_FlyDB.Model
         public int ExtraLuggageAmount { get; set; }
         public DateTime BookedDate { get; set; }
         public DateTime PaidDate { get; set; }
-        public double FinalTicketPrice { get; set; }
+        public decimal FinalTicketPrice { get; set; }
 
         public ServiceClass ServiceClass { get; set; }
         public TimeTable TimeTable { get; set; }

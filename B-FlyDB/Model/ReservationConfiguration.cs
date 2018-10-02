@@ -15,7 +15,7 @@ namespace B_FlyDB.Model
             Property(p => p.ExtraLuggageAmount).IsRequired();
             Property(p => p.BookedDate).IsRequired();
             Property(p => p.PaidDate).IsOptional();
-            Property(p => p.FinalTicketPrice).IsRequired();
+            Property(p => p.FinalTicketPrice).IsRequired().HasPrecision(11,2);
         }
     }
 }
