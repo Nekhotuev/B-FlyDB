@@ -21,14 +21,21 @@ namespace B_FlyDB
 
             using (ClassifiersContext context = new ClassifiersContext())
             {
-                context.Airports.Select(a => a.Code == "SVO");
+                var airports = context.Airports.ToList();
+                foreach (Airport airport in airports)
+                {
+                    Console.WriteLine(airport.Name);
+                }
             }
 
-            //using (BFlyContext db = new BFlyContext())
-            //{
-            //    db.Airports.Select(a => a.Code == "SVO");
-
-            //}
+            using (UserContext userContext = new UserContext())
+            {
+                var users = userContext.Users.ToList();
+                foreach (User user in users)
+                {
+                    Console.WriteLine(user.LastName);
+                }
+            }
         }
     }
 

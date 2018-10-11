@@ -9,7 +9,7 @@ namespace B_FlyDB.Model
     {
         public Flight()
         {
-            TimeTables = new List<TimeTable>();
+            TimeTables = new HashSet<TimeTable>();
         }
 
         public Guid Id { get; set; }

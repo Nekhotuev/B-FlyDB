@@ -8,9 +8,9 @@ namespace B_FlyDB.Model
     {
         public Airport()
         {
-            AirportSchemes = new List<AirportScheme>();
-            Departures = new List<Departure>();
-            Arrivals = new List<Arrival>();
+            AirportSchemes = new HashSet<AirportScheme>();
+            Departures = new HashSet<Departure>();
+            Arrivals = new HashSet<Arrival>();
         }
 
         public Guid Id { get; set; }

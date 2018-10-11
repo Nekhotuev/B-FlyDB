@@ -9,7 +9,7 @@ namespace B_FlyDB.Model
     {
         public ServiceClass()
         {
-            Reservations = new List<Reservation>();
+            Reservations = new HashSet<Reservation>();
         }
 
         public Guid Id { get; set; }

@@ -7,7 +7,7 @@ namespace B_FlyDB.Model
     {
         public Country()
         {
-            Cities = new List<City>();
+            Cities = new HashSet<City>();
         }
 
         public Guid Id { get; set; }

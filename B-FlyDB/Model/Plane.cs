@@ -7,7 +7,7 @@ namespace B_FlyDB.Model
     {
         public Plane()
         {
-            Flights = new List<Flight>();
+            Flights = new HashSet<Flight>();
         }
 
         public Guid Id { get; set; }
