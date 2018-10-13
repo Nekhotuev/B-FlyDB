@@ -8,11 +8,6 @@ namespace B_FlyDB.DAL
         public UserContext() : base("DefaultConnection")
         { }
 
-        static UserContext()
-        {
-            Database.SetInitializer<UserContext>(new TestUsersInitializer());
-        }
-        
         public DbSet<City> Cities { get; set; }
         public DbSet<User> Users { get; set; }
 

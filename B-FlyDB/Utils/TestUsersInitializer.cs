@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using B_FlyDB.Model;
+using B_FlyDB.DAL;
 
-namespace B_FlyDB.DAL
+namespace B_FlyDB.Utils
 {
-    public class TestUsersInitializer : CreateDatabaseIfNotExists<UserContext>
+    public class TestUsersInitializer
     {
-        protected override void Seed(UserContext db)
+        public void CreateTestUsers(UserContext db)
         {
             List<City> cities = db.Cities.ToList();
 

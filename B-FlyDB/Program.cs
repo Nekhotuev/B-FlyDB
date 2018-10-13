@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using B_FlyDB;
 using B_FlyDB.DAL;
 using B_FlyDB.Model;
+using  B_FlyDB.Utils;
 
 namespace B_FlyDB
 {
@@ -18,7 +19,7 @@ namespace B_FlyDB
         static void Main(string[] args)
         {
             
-
+            //DB initialization, create data for classifiers
             using (ClassifiersContext context = new ClassifiersContext())
             {
                 var airports = context.Airports.ToList();
@@ -28,12 +29,13 @@ namespace B_FlyDB
                 }
             }
 
+            //create test users if no exists
             using (UserContext userContext = new UserContext())
             {
-                var users = userContext.Users.ToList();
-                foreach (User user in users)
+                if (!userContext.Users.Any())
                 {
-                    Console.WriteLine(user.LastName);
+                    TestUsersInitializer tUsers = new TestUsersInitializer();
+                    tUsers.CreateTestUsers(userContext);
                 }
             }
         }

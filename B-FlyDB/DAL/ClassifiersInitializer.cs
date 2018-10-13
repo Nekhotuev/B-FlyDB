@@ -6,7 +6,7 @@ using B_FlyDB.Model;
 
 namespace B_FlyDB.DAL
 {
-    public class ClassifiersInitializer : DropCreateDatabaseAlways<ClassifiersContext>
+    public class ClassifiersInitializer : CreateDatabaseIfNotExists<ClassifiersContext>
     {
         protected override void Seed(ClassifiersContext context)
         {
