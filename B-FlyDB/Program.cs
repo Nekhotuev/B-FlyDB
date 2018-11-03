@@ -27,6 +27,7 @@ namespace B_FlyDB
                 {
                     Console.WriteLine(airport.Name);
                 }
+                //blablabla
             }
 
             //create test users if no exists
