@@ -8,15 +8,15 @@ namespace Core.Model
     {
         public AirportScheme()
         {
-            Arrivals = new List<Arrival>();
-            Departures = new List<Departure>();
+            ArrivalFlights = new List<Flight>();
+            DepartureFlights = new List<Flight>();
         }
 
         public Guid Id { get; set; }
         public Airport Airport { get; set; }
         public Terminal Terminal { get; set; }
         public Gate Gate { get; set; }
-        public ICollection<Arrival> Arrivals { get; set; }
-        public ICollection<Departure> Departures { get; set; }
+        public ICollection<Flight> ArrivalFlights { get; set; }
+        public ICollection<Flight> DepartureFlights { get; set; }
     }
 }

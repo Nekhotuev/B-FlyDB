@@ -51,10 +51,8 @@
     <Compile Include="Model\Airport.cs" />
     <Compile Include="Configurations\AirportConfiguration.cs" />
     <Compile Include="Model\AirportScheme.cs" />
-    <Compile Include="Model\Arrival.cs" />
     <Compile Include="Model\City.cs" />
     <Compile Include="Model\Country.cs" />
-    <Compile Include="Model\Departure.cs" />
     <Compile Include="Model\Flight.cs" />
     <Compile Include="Configurations\FlightConfiguration.cs" />
     <Compile Include="Model\Gate.cs" />

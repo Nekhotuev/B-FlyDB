@@ -25,10 +25,9 @@ namespace Core.Model
         public int HandLuggageAmount { get; set; }
         public int HandLuggageMaxWeight { get; set; }
 
-
+        public AirportScheme ArrivalAirportScheme { get; set; }
+        public AirportScheme DepartureAirportScheme { get; set; }
         public ICollection<TimeTable> TimeTables { get; set; }
         public Plane Plane { get; set; }
-        public Departure Departure { get; set; }
-        public Arrival Arrival { get; set; }
     }
 }
