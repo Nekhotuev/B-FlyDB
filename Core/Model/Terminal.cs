@@ -10,16 +10,12 @@ namespace Core.Model
     {
         public Terminal()
         {
-            AirportSchemes = new HashSet<AirportScheme>();
-            Departures = new HashSet<Departure>();
-            Arrivals = new HashSet<Arrival>();
+            AirportSchemes = new List<AirportScheme>();
         }
         
         public Guid Id { get; set; }
         public string Name { get; set; }
         public ICollection<AirportScheme> AirportSchemes { get; set; }
-        public ICollection<Departure> Departures { get; set; }
-        public ICollection<Arrival> Arrivals { get; set; }
     }
 }
 

@@ -88,16 +88,26 @@ namespace Data.Utils
             context.SaveChanges();
 
             //Airport initialization zone
-            Airport domodedovoAirport = new Airport() { Name = "Domodedovo", Code = "DME", Country = russiaCountry, City = moscowCity};
-            Airport vnukovoAirport = new Airport() { Name = "Vnukovo", Code = "VKO", Country = russiaCountry, City = moscowCity };
-            Airport scheremetevoAirport = new Airport() { Name = "Scheremetevo", Code = "SVO", Country = russiaCountry, City = moscowCity };
-            Airport volgAirport = new Airport() { Name = "Volgograd airport", Code = "VGO", Country = russiaCountry, City = volgogradCity };
-            Airport saratovAirport = new Airport() { Name = "Saratov airport", Code = "SAO", Country = russiaCountry, City = saratovCity};
-            Airport sochiAirport = new Airport() { Name = "Sochi airport", Code = "SCH", Country = russiaCountry, City = sochiCity};
-            Airport schipholAirport = new Airport() { Name = "Schiphol", Code = "SPL", Country = netherlandsCountry, City = amsterdamCity};
-            Airport sharlDeGollAirport = new Airport() { Name = "Sharl-De-Goll airport", Code = "SGD", Country = franceCountry, City = parisCity};
-            Airport schonefieldAirport = new Airport() { Name = "Schonefield", Code = "SCF", Country = germanyCountry, City = berlinCity};
-            Airport frankfurtOnMaineAirport = new Airport() { Name = "Frankfurt on Meine", Code = "FOM", Country = germanyCountry, City = frankfurtCity};
+            Airport domodedovoAirport = new Airport() { Name = "Domodedovo", Code = "DME", City = moscowCity};
+            Airport vnukovoAirport = new Airport() { Name = "Vnukovo", Code = "VKO", City = moscowCity };
+            Airport scheremetevoAirport = new Airport() { Name = "Scheremetevo", Code = "SVO", City = moscowCity };
+            Airport volgAirport = new Airport() { Name = "Volgograd airport", Code = "VGO", City = volgogradCity };
+            Airport saratovAirport = new Airport() { Name = "Saratov airport", Code = "SAO", City = saratovCity};
+            Airport sochiAirport = new Airport() { Name = "Sochi airport", Code = "SCH", City = sochiCity};
+            Airport schipholAirport = new Airport() { Name = "Schiphol", Code = "SPL", City = amsterdamCity};
+            Airport sharlDeGollAirport = new Airport() { Name = "Sharl-De-Goll airport", Code = "SGD", City = parisCity};
+            Airport schonefieldAirport = new Airport() { Name = "Schonefield", Code = "SCF", City = berlinCity};
+            Airport frankfurtOnMaineAirport = new Airport() { Name = "Frankfurt on Meine", Code = "FOM", City = frankfurtCity};
+            //Airport domodedovoAirport = new Airport() { Name = "Domodedovo", Code = "DME", Country = russiaCountry, City = moscowCity };
+            //Airport vnukovoAirport = new Airport() { Name = "Vnukovo", Code = "VKO", Country = russiaCountry, City = moscowCity };
+            //Airport scheremetevoAirport = new Airport() { Name = "Scheremetevo", Code = "SVO", Country = russiaCountry, City = moscowCity };
+            //Airport volgAirport = new Airport() { Name = "Volgograd airport", Code = "VGO", Country = russiaCountry, City = volgogradCity };
+            //Airport saratovAirport = new Airport() { Name = "Saratov airport", Code = "SAO", Country = russiaCountry, City = saratovCity };
+            //Airport sochiAirport = new Airport() { Name = "Sochi airport", Code = "SCH", Country = russiaCountry, City = sochiCity };
+            //Airport schipholAirport = new Airport() { Name = "Schiphol", Code = "SPL", Country = netherlandsCountry, City = amsterdamCity };
+            //Airport sharlDeGollAirport = new Airport() { Name = "Sharl-De-Goll airport", Code = "SGD", Country = franceCountry, City = parisCity };
+            //Airport schonefieldAirport = new Airport() { Name = "Schonefield", Code = "SCF", Country = germanyCountry, City = berlinCity };
+            //Airport frankfurtOnMaineAirport = new Airport() { Name = "Frankfurt on Meine", Code = "FOM", Country = germanyCountry, City = frankfurtCity };
             context.Airports.AddRange(new List<Airport>()
             {
                 domodedovoAirport, vnukovoAirport, scheremetevoAirport, volgAirport,

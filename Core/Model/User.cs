@@ -9,7 +9,7 @@ namespace Core.Model
     {
         public User()
         {
-            Reservations = new HashSet<Reservation>();
+            Reservations = new List<Reservation>();
         }
 
         public Guid Id { get; set; }

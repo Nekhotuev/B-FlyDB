@@ -7,7 +7,7 @@ namespace Core.Model
     {
         public Country()
         {
-            Cities = new HashSet<City>();
+            Cities = new List<City>();
         }
 
         public Guid Id { get; set; }

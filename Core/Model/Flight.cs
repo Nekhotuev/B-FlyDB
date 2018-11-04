@@ -9,7 +9,7 @@ namespace Core.Model
     {
         public Flight()
         {
-            TimeTables = new HashSet<TimeTable>();
+            TimeTables = new List<TimeTable>();
         }
 
         public Guid Id { get; set; }

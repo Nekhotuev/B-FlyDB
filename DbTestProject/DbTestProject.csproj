@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{66675BD5-7710-4368-9D7C-706C8F440227}</ProjectGuid>
+    <ProjectGuid>{3ADD2B2E-FB50-41CF-AFEE-1294984C83F3}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>B_FlyDB</RootNamespace>
-    <AssemblyName>B-FlyDB</AssemblyName>
+    <RootNamespace>DbTestProject</RootNamespace>
+    <AssemblyName>DbTestProject</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -50,41 +50,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAL\ClassifiersContext.cs" />
-    <Compile Include="DAL\ClassifiersInitializer.cs" />
-    <Compile Include="DAL\FlightsContext.cs" />
-    <Compile Include="Model\AirportScheme.cs" />
-    <Compile Include="Model\Arrival.cs" />
-    <Compile Include="Model\Departure.cs" />
-    <Compile Include="Model\FlightConfiguration.cs" />
-    <Compile Include="Model\TimeTableConfiguration.cs" />
-    <Compile Include="Model\IdConvention.cs" />
-    <Compile Include="Model\AirportConfiguration.cs" />
-    <Compile Include="Model\City.cs" />
-    <Compile Include="Model\Country.cs" />
-    <Compile Include="Model\Flight.cs" />
-    <Compile Include="Model\TimeTable.cs" />
-    <Compile Include="Model\Airport.cs" />
-    <Compile Include="Model\Gate.cs" />
-    <Compile Include="Model\Plane.cs" />
-    <Compile Include="Model\NameConvention.cs" />
-    <Compile Include="Model\PlaneConfiguration.cs" />
-    <Compile Include="Model\ReservationConfiguration.cs" />
-    <Compile Include="Model\ServiceClass.cs" />
-    <Compile Include="Model\UserConfiguration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Model\Terminal.cs" />
-    <Compile Include="Model\User.cs" />
-    <Compile Include="Model\Reservation.cs" />
-    <Compile Include="DAL\UserContext.cs" />
-    <Compile Include="Utils\TestUsersInitializer.cs" />
-    <Compile Include="Utils\ExtensionMethods.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{f98d3319-673c-40a4-aa6c-8d820743987f}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Data\Data.csproj">
+      <Project>{37b8e346-cb66-4360-9738-eae635a25221}</Project>
+      <Name>Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

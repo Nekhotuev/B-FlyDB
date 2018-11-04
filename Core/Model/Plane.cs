@@ -7,7 +7,7 @@ namespace Core.Model
     {
         public Plane()
         {
-            Flights = new HashSet<Flight>();
+            Flights = new List<Flight>();
         }
 
         public Guid Id { get; set; }
