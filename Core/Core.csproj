@@ -69,7 +69,7 @@
     <Compile Include="Model\TimeTable.cs" />
     <Compile Include="Configurations\TimeTableConfiguration.cs" />
     <Compile Include="Model\User.cs" />
-    <Compile Include="Configurations\USerConfiguration.cs" />
+    <Compile Include="Configurations\UserConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

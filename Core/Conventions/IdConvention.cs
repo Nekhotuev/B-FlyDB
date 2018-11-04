@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.ModelConfiguration.Conventions;
 
-namespace Core.Convention
+namespace Core.Conventions
 {
     public class IdConvention : Convention
     {

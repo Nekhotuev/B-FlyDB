@@ -1,7 +1,7 @@
 ﻿using System.Data.Entity;
 using Core.Model;
-using Core.Configuration;
-using Core.Convention;
+using Core.Configurations;
+using Core.Conventions;
 using Data.Utils;
 
 namespace Data

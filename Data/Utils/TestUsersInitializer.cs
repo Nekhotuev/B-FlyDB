@@ -8,7 +8,7 @@ namespace Data.Utils
 {
     public class TestUsersInitializer
     {
-        public void CreateTestUsers(UserContext db)
+        public void CreateTestUsers(BflyContext db)
         {
             List<City> cities = db.Cities.ToList();
 

@@ -79,7 +79,7 @@
     <Compile Include="Model\Reservation.cs" />
     <Compile Include="DAL\UserContext.cs" />
     <Compile Include="Utils\TestUsersInitializer.cs" />
-    <Compile Include="Utils\ExtensoinMethods.cs" />
+    <Compile Include="Utils\ExtensionMethods.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

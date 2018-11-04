@@ -1,6 +1,6 @@
 ﻿using System.Data.Entity.ModelConfiguration.Conventions;
 
-namespace Core.Convention
+namespace Core.Conventions
 {
     public class NameConvention : Convention
     {

@@ -2,7 +2,7 @@
 
 namespace B_FlyDB.Utils
 {
-    public static class ExtensoinMethods
+    public static class ExtensionMethods
     {
         public static HashSet<T> ToHashSet<T>(this IEnumerable<T> source, IEqualityComparer<T> comparer = null)
         {
