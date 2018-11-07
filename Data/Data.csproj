@@ -48,8 +48,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="ClassifiersContext.cs" />
+    <Compile Include="Configurations\AirportConfiguration.cs" />
+    <Compile Include="Configurations\FlightConfiguration.cs" />
+    <Compile Include="Configurations\PlaneConfiguration.cs" />
+    <Compile Include="Configurations\ReservationConfiguration.cs" />
+    <Compile Include="Configurations\TimeTableConfiguration.cs" />
+    <Compile Include="Configurations\UserConfiguration.cs" />
+    <Compile Include="Conventions\IdConvention.cs" />
+    <Compile Include="Conventions\NameConvention.cs" />
+    <Compile Include="Infrastructure\DbFactory.cs" />
+    <Compile Include="Infrastructure\IDbFactory.cs" />
+    <Compile Include="Infrastructure\IUnitOfWork.cs" />
+    <Compile Include="Infrastructure\Repository.cs" />
+    <Compile Include="Infrastructure\UnitOfWork.cs" />
     <Compile Include="Utils\ClassifiersInitializer.cs" />
     <Compile Include="BflyContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -65,6 +77,9 @@
       <Project>{f98d3319-673c-40a4-aa6c-8d820743987f}</Project>
       <Name>Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Repositories\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

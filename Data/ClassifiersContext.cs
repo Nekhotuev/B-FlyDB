@@ -32,6 +32,8 @@ namespace Data
             modelBuilder.Conventions.Add(new NameConvention());
             modelBuilder.Entity<Flight>().HasOptional(p => p.ArrivalAirportScheme).WithMany(p => p.ArrivalFlights);
             modelBuilder.Entity<Flight>().HasOptional(p => p.DepartureAirportScheme).WithMany(p => p.DepartureFlights);
+
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

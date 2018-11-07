@@ -49,25 +49,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Airport.cs" />
-    <Compile Include="Configurations\AirportConfiguration.cs" />
     <Compile Include="Model\AirportScheme.cs" />
     <Compile Include="Model\City.cs" />
     <Compile Include="Model\Country.cs" />
     <Compile Include="Model\Flight.cs" />
-    <Compile Include="Configurations\FlightConfiguration.cs" />
     <Compile Include="Model\Gate.cs" />
-    <Compile Include="Conventions\IdConvention.cs" />
-    <Compile Include="Conventions\NameConvention.cs" />
     <Compile Include="Model\Plane.cs" />
-    <Compile Include="Configurations\PlaneConfiguration.cs" />
     <Compile Include="Model\Reservation.cs" />
-    <Compile Include="Configurations\ReservationConfiguration.cs" />
     <Compile Include="Model\ServiceClass.cs" />
     <Compile Include="Model\Terminal.cs" />
     <Compile Include="Model\TimeTable.cs" />
-    <Compile Include="Configurations\TimeTableConfiguration.cs" />
     <Compile Include="Model\User.cs" />
-    <Compile Include="Configurations\UserConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

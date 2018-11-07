@@ -25,6 +25,10 @@ namespace Data
         public DbSet<TimeTable> TimeTables { get; set; }
         public  DbSet<User> Users { get; set; }
 
+        public virtual void Commit()
+        {
+            base.SaveChanges();
+        }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -38,6 +42,8 @@ namespace Data
             modelBuilder.Conventions.Add(new NameConvention());
             modelBuilder.Entity<Flight>().HasOptional(p => p.ArrivalAirportScheme).WithMany(p => p.ArrivalFlights);
             modelBuilder.Entity<Flight>().HasOptional(p => p.DepartureAirportScheme).WithMany(p => p.DepartureFlights);
+
+            base.OnModelCreating(modelBuilder);
         }
     }
 }
