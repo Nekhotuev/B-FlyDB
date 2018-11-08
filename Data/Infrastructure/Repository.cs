@@ -8,17 +8,17 @@ using System.Threading.Tasks;
 
 namespace Data.Infrastructure
 {
-    public abstract class RepositoryBase<T> where T : class
+    public abstract class Repository<T> where T : class
     {
         private BflyContext _context;
         private readonly IDbSet<T> dbset;
-        protected RepositoryBase(IDbFactory databaseFactory)
+        protected Repository(IDbFactory dbFactory)
         {
-            DatabaseFactory = databaseFactory;
+            DbFactory = dbFactory;
             dbset = Context.Set<T>();
         }
 
-        protected IDbFactory DatabaseFactory
+        protected IDbFactory DbFactory
         {
             get;
             private set;
@@ -26,7 +26,7 @@ namespace Data.Infrastructure
 
         protected BflyContext Context
         {
-            get { return _context ?? (_context = DatabaseFactory.Get()); }
+            get { return _context ?? (_context = DbFactory.Get()); }
         }
 
         public virtual void Add(T entity)

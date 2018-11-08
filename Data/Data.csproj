@@ -63,6 +63,18 @@
     <Compile Include="Infrastructure\IUnitOfWork.cs" />
     <Compile Include="Infrastructure\Repository.cs" />
     <Compile Include="Infrastructure\UnitOfWork.cs" />
+    <Compile Include="Repositories\AirportRepository.cs" />
+    <Compile Include="Repositories\AirportSchemeRepository.cs" />
+    <Compile Include="Repositories\CityRepository.cs" />
+    <Compile Include="Repositories\CountryRepository.cs" />
+    <Compile Include="Repositories\FlightRepository.cs" />
+    <Compile Include="Repositories\GateRepository.cs" />
+    <Compile Include="Repositories\PlaneRepository.cs" />
+    <Compile Include="Repositories\ReservationRepository.cs" />
+    <Compile Include="Repositories\ServiceClassRepository.cs" />
+    <Compile Include="Repositories\TerminalRepository.cs" />
+    <Compile Include="Repositories\TimeTableRepository.cs" />
+    <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="Utils\ClassifiersInitializer.cs" />
     <Compile Include="BflyContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -79,8 +91,6 @@
       <Name>Core</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Repositories\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
