@@ -41,10 +41,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="CityService.cs" />
+    <Compile Include="CountryCIty.cs" />
+    <Compile Include="FlightService.cs" />
+    <Compile Include="PlaneService.cs" />
+    <Compile Include="ServiceClassService.cs" />
+    <Compile Include="TerminalService.cs" />
+    <Compile Include="UserService.cs" />
+    <Compile Include="TimeTableService.cs" />
+    <Compile Include="ReservationService.cs" />
+    <Compile Include="GateService.cs" />
+    <Compile Include="AirportSchemeService.cs" />
+    <Compile Include="AirportService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{F98D3319-673C-40A4-AA6C-8D820743987F}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Data\Data.csproj">
       <Project>{37b8e346-cb66-4360-9738-eae635a25221}</Project>
       <Name>Data</Name>
