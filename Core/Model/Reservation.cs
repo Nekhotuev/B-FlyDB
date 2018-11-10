@@ -5,7 +5,7 @@ namespace Core.Model
 {
     public class Reservation
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public bool Booked { get; set; }
         public int PreBookedSeatRow { get; set; }
         public string PreBookedSeatColumn { get; set; }

@@ -10,7 +10,7 @@ namespace Core.Model
             Cities = new List<City>();
         }
 
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public ICollection<City> Cities { get; set; }
     }

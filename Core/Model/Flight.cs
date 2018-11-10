@@ -12,7 +12,7 @@ namespace Core.Model
             TimeTables = new List<TimeTable>();
         }
 
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public string Code { get; set; }
         public decimal TicketPrice { get; set; }
         public int MaxDiscount { get; set; }

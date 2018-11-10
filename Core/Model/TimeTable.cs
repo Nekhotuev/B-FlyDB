@@ -10,7 +10,7 @@ namespace Core.Model
             Reservations = new List<Reservation>();
         }
 
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public DateTime DepartureTime { get; set; }
         public DateTime ArrivalTime { get; set; }
         public Flight Flight { get; set; }

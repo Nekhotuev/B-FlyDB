@@ -24,10 +24,7 @@ namespace Data.Infrastructure
             private set;
         }
 
-        protected BflyContext Context
-        {
-            get { return _context ?? (_context = DbFactory.Get()); }
-        }
+        protected BflyContext Context => _context ?? (_context = DbFactory.Get());
 
         public virtual void Add(T entity)
         {

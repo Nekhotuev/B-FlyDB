@@ -12,7 +12,7 @@ namespace Core.Model
             Reservations = new List<Reservation>();
         }
 
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
         public string FirstName { get; set; }

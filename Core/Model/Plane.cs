@@ -10,7 +10,7 @@ namespace Core.Model
             Flights = new List<Flight>();
         }
 
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public string Manufacturer { get; set; }
         public string PlaneModel { get; set; }
         public string PlaneModification { get; set; }

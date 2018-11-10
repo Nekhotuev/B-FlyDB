@@ -8,7 +8,7 @@ namespace Core.Conventions
     {
         public IdConvention()
         {
-            Properties<Guid>().Where(p => p.Name == "Id").Configure(p => p.HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity));
+            Properties<int>().Where(p => p.Name == "Id").Configure(p => p.HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity));
         }
     }
 }
