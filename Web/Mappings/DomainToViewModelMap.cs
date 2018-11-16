@@ -7,8 +7,18 @@ namespace Web.Mappings
     {
         public DomainToViewModelMap()
         {
-            //CreateMap<User, UserViewModel>();
-            //and so on
+            CreateMap<AirportScheme, AirportSchemeViewModel>();
+            CreateMap<Airport, AirportViewModel>();
+            CreateMap<City, CityViewModel>();
+            CreateMap<Country, CountryViewModel>();
+            CreateMap<Flight, FlightViewModel>();
+            CreateMap<Gate, GateViewModel>();
+            CreateMap<Plane, PlaneViewModel>();
+            CreateMap<Reservation, ReservationViewModel>();
+            CreateMap<ServiceClass, ServiceClassViewModel>();
+            CreateMap<Terminal, TerminalViewModel>();
+            CreateMap<TimeTable, TimeTableViewModel>();
+            CreateMap<User, UserViewModel>();
         }
 
         public override string ProfileName
