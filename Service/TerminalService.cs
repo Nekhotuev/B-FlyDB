@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Core.Model;
 using Data.Infrastructure;
 using Data.Repositories;
@@ -9,6 +10,7 @@ namespace Service
     {
         Terminal GetTerminal(int id);
         IEnumerable<Terminal> GetTerminals();
+        IEnumerable<Terminal> GetTerminals(int airportId);
 
         void CreateTerminal(Terminal terminal);
         void UpdateTerminal(Terminal terminal);
@@ -19,6 +21,8 @@ namespace Service
     public class TerminalService : ITerminalService
     {
         private readonly ITerminalRepository _terminalRepository;
+        private readonly IAirportRepository _airportRepository;
+        private readonly IAirportSchemeRepository _airportSchemeRepository;
         private readonly IUnitOfWork _unitOfWork;
 
         public TerminalService(ITerminalRepository terminalRepository, IUnitOfWork unitOfWork)
@@ -60,6 +64,13 @@ namespace Service
         public void SaveTerminal()
         {
             _unitOfWork.Commit();
+        }
+
+        public IEnumerable<Terminal> GetTerminals(int airportId)
+        {
+            var airport = _airportRepository.GetById(airportId);
+            var ascheme = _airportSchemeRepository.GetMany(s => s.Airport == airport);
+            return ascheme.Select(t => t.Terminal).Distinct();
         }
 
         #endregion

@@ -15,7 +15,9 @@ namespace DbTestProject
             //DB initialization, create data for classifiers
             using (ClassifiersContext context = new ClassifiersContext())
             {
-                context.Database.Initialize(false);
+                //context.Database.CreateIfNotExists();
+
+                //context.Database.Initialize(true);
                 
                 var airports = context.Airports.ToList();
                 
