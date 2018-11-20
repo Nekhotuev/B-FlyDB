@@ -52,6 +52,8 @@ namespace Web.Controllers
         // GET: Airports/Create
         public ActionResult Create()
         {
+            ViewData["Terminals"] = _terminalService.GetTerminals();
+            ViewData["Gates"] = _gateService.GetGates();
             return View();
         }
 
@@ -70,7 +72,7 @@ namespace Web.Controllers
 
             return View(airport);
         }
-
+        
         // GET: Airports/Edit/5
         public ActionResult Edit(int? id)
         {
