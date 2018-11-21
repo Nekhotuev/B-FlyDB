@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Core.Model.Airport>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-2">
+            @Html.Partial("_SideBar")
+        </div>
+        <div class="col-lg-10">
+            <div class="row">
+                <h2>Airports</h2>
+            </div>
+            <div class="row">
+                @Html.ActionLink("Create New", "Create")
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <p>@Html.DisplayNameFor(model => model.Name)</p>
+                </div>
+                <div class="col-lg-2">
+                    <p>@Html.DisplayNameFor(model => model.Code)</p>
+                </div>
+                <div class="col-lg-4">
+                    <p>@Html.DisplayNameFor(model => model.City)</p>
+                </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-1"></div>
+            </div>
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <p>@Html.DisplayFor(modelItem => item.Name)</p>
+                        </div>
+                        <div class="col-lg-2">
+                            <p>@Html.DisplayFor(modelItem => item.Code)</p>
+                        </div>
+                        <div class="col-lg-4">
+                            <p>@Html.DisplayFor(modelItem => item.City)</p>
+                        </div>
+                        <div class="col-lg-1">
+                            <input type="button" class="btn btn-primary btn-sm" value="Edit" onclick="location.href = '@Url.Action("Edit", "Classifiers")'" />
+                        </div>
+                        <div class="col-lg-1">
+                            <input type="button" class="btn btn-danger btn-sm" value="Delete" onclick="location.href = '@Url.Action("Delete", "Classifiers")'" />
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

@@ -12,14 +12,14 @@ using Service;
 
 namespace Web.Controllers
 {
-    public class AirportsController : Controller
+    public class ClassifiersController : Controller
     {
         private IAirportService _airportService;
         private IAirportSchemeService _airportSchemeService;
         private ITerminalService _terminalService;
         private IGateService _gateService;
 
-        public AirportsController(IAirportService airportService, IAirportSchemeService airportSchemeService, ITerminalService terminalService, IGateService gateService)
+        public ClassifiersController(IAirportService airportService, IAirportSchemeService airportSchemeService, ITerminalService terminalService, IGateService gateService)
         {
             _airportService = airportService;
             _airportSchemeService = airportSchemeService;
@@ -33,22 +33,7 @@ namespace Web.Controllers
         {
             return View(_airportService.GetAirports());
         }
-
-        // GET: Airports/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Airport airport = _airportService.GetAirport((int)id);
-            if (airport == null)
-            {
-                return HttpNotFound();
-            }
-            return View(airport);
-        }
-
+        
         // GET: Airports/Create
         public ActionResult Create()
         {
