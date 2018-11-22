@@ -31,11 +31,17 @@ namespace Web.Controllers
         // GET: Airports
         public ActionResult Index()
         {
+            return View();
+        }
+
+        // GET: Airports
+        public ActionResult AirportIndex()
+        {
             return View(_airportService.GetAirports());
         }
-        
+
         // GET: Airports/Create
-        public ActionResult Create()
+        public ActionResult AirportCreate()
         {
             ViewData["Terminals"] = _terminalService.GetTerminals();
             ViewData["Gates"] = _gateService.GetGates();
@@ -47,19 +53,19 @@ namespace Web.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Code")] Airport airport)
+        public ActionResult AirportCreate([Bind(Include = "Id,Name,Code")] Airport airport)
         {
             if (ModelState.IsValid)
             {
                 _airportService.CreateAirport(airport);
-                return RedirectToAction("Index");
+                return RedirectToAction("AirportIndex");
             }
 
             return View(airport);
         }
         
         // GET: Airports/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult AirportEdit(int? id)
         {
             if (id == null)
             {
@@ -78,18 +84,18 @@ namespace Web.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,Code,City")] Airport airport)
+        public ActionResult AirportEdit([Bind(Include = "Id,Name,Code,City")] Airport airport)
         {
             if (ModelState.IsValid)
             {
                 _airportService.UpdateAirport(airport);
-                return RedirectToAction("Index");
+                return RedirectToAction("AirportIndex");
             }
             return View(airport);
         }
 
         // GET: Airports/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult AirportDelete(int? id)
         {
             if (id == null)
             {
@@ -104,12 +110,12 @@ namespace Web.Controllers
         }
 
         // POST: Airports/Delete/5
-        [HttpPost, ActionName("Delete")]
+        [HttpPost, ActionName("AirportDelete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult AirportDeleteConfirmed(int id)
         {
             _airportService.DeleteAirport(id);
-            return RedirectToAction("Index");
+            return RedirectToAction("AirportIndex");
         }
     }
 }

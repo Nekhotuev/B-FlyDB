@@ -2,7 +2,7 @@
 @model Core.Model.Airport
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Create airport";
 }
 
 @{
@@ -10,7 +10,7 @@
     IEnumerable<Gate> gates = (IEnumerable<Gate>)ViewData["Gates"];
 }
 
-<h2>Create</h2>
+<h2>Create new Airport</h2>
 
 
 @using (Html.BeginForm())
@@ -75,7 +75,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "AirportIndex")
 </div>
 
 @section Scripts {
