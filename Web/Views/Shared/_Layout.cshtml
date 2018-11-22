@@ -21,7 +21,7 @@
             @Html.ActionLink("BFly", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
         </div>
         <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav" id="topnavbar">
                 <li>@Html.ActionLink("Find a flight", "Index", "Home")</li>
                 <li>@Html.ActionLink("Register on flight", "Index", "Home")</li>
                 <li>@Html.ActionLink("Prepare to trip", "Index", "Home")</li>
@@ -39,7 +39,7 @@
 </div>
 <div class="container-fluid">
     <p />
-    <footer class="well" style="bottom: 0;">
+    <footer class="well" id="footer">
         <div class="container-fluid text-center text-md-left">
             <div class="row">
                 <div class="col-md-6 mt-md-0 mt-3">

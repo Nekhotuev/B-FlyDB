@@ -23,16 +23,27 @@ textarea {
     max-width: 280px;
 }
 
-.page-footer{
-    position: fixed;
-    bottom: 0
+/*footer zone*/
+#footer {    
+    bottom: 0;    
+}
+/*- doesn`t work:*/
+#footer well {
+    background-color: deepskyblue;
 }
 
-.well{
-    background-color: deepskyblue
+/*make cursor become pointer*/
+#linkedtable td:hover {
+    cursor:pointer;
 }
 
-/*side-bar styles zone*/
+/*increase font size on top navbar - doesn`t work*/
+#topnavbar .nav {
+    font: italic;
+    font-size: 8px;
+}
+
+/*side-bar styles zone - doesn`t work*/
 .wrapper {
     display: flex;
     align-items: stretch;
