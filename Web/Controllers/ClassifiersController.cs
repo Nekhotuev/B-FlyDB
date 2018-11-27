@@ -93,7 +93,7 @@ namespace Web.Controllers
             }
             return View(airport);
         }
-
+        
         // GET: Airports/Delete/5
         public ActionResult AirportDelete(int? id)
         {
@@ -106,7 +106,7 @@ namespace Web.Controllers
             {
                 return HttpNotFound();
             }
-            return View(airport);
+            return PartialView(airport);
         }
 
         // POST: Airports/Delete/5

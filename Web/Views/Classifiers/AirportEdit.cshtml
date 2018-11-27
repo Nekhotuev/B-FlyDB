@@ -4,6 +4,9 @@
     ViewBag.Title = "Edit " + @Model.Name;
 }
 
+<div id="modDialog" class="modal fade" >
+    <div id="dialogContent" class="modal-dialog"></div>
+</div>
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-2">
@@ -18,7 +21,7 @@
                     @using (Html.BeginForm())
                     {
                         @Html.AntiForgeryToken()
-    
+
                         <div class="form-horizontal">
                             <h4>@Model.Name airport</h4>
                             <hr />
@@ -40,12 +43,12 @@
                                     @Html.ValidationMessageFor(model => model.Code, "", new { @class = "text-danger" })
                                 </div>
                             </div>
-                            
+
                             <div class="form-group">
                                 @Html.LabelFor(model => model.City, htmlAttributes: new { @class = "control-label col-md-2" })
                                 <div class="col-md-10">
                                     @*@Html.DropDownList()*@
-                                    @Html.ValidationMessageFor(model => model.City, "", new {@class = "text-danger"})
+                                    @Html.ValidationMessageFor(model => model.City, "", new { @class = "text-danger" })
                                 </div>
                             </div>
 
@@ -53,7 +56,7 @@
                                 <div class="col-md-offset-2 col-md-10">
                                     <input type="submit" value="Save" class="btn btn-success" />
                                     <input type="button" value="Cancel" class="btn btn-default" onclick="location.href = '@Url.Action("AirportIndex", "Classifiers")'" />
-                                    <input type="button" value="Delete" class="btn btn-danger" onclick="location.href = '@Url.Action("AirportDelete", "Classifiers", new {id = @Model.Id})'" />
+                                    <input type="button" value="Delete" class="btn btn-danger" id="delete-button" />
                                 </div>
                             </div>
                         </div>
@@ -67,4 +70,22 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+
+    <script type="text/javascript">
+        $(function () {
+            $.ajaxSetup({ cache: false });
+            $("#delete-button").click(function (e) {
+                var url = '@Url.Action("AirportDelete", "Classifiers", new {id = @Model.Id})';
+
+                e.preventDefault();
+                //$.get(this.href, 
+                $.get(url, 
+                    function (data) {
+                        $('#dialogContent').html(data);
+                        $('#modDialog').modal('show');
+                    });
+            });
+        })
+
+    </script>
 }

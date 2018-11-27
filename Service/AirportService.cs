@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Core.Model;
 using Data.Infrastructure;
 using Data.Repositories;
@@ -19,11 +20,13 @@ namespace Service
     public class AirportService : IAirportService
     {
         private readonly IAirportRepository _airportRepository;
+        private readonly IAirportSchemeRepository _airportSchemeRepository;
         private readonly IUnitOfWork _unitOfWork;
 
-        public AirportService(IAirportRepository airportRepository, IUnitOfWork unitOfWork)
+        public AirportService(IAirportRepository airportRepository, IAirportSchemeRepository airportSchemeRepository, IUnitOfWork unitOfWork)
         {
             _airportRepository = airportRepository;
+            _airportSchemeRepository = airportSchemeRepository;
             _unitOfWork = unitOfWork;
         }
 
@@ -53,6 +56,13 @@ namespace Service
 
         public void DeleteAirport(int id)
         {
+            Airport airport = _airportRepository.GetById(id);
+            List<AirportScheme> schemes =
+                _airportSchemeRepository.GetMany(a => a.Airport.Id == airport.Id).ToList();
+            foreach (AirportScheme scheme in schemes)
+            {
+                _airportSchemeRepository.Delete(scheme);
+            }
             _airportRepository.Delete(_airportRepository.GetById(id));
             SaveAirport();
         }
