@@ -1,12 +1,12 @@
-﻿using System;
+﻿using Core.Model;
 
-namespace Core.Model
+namespace Web.ViewModel
 {
     public class CityViewModel
     {
         public int Id { get; set; }
         public string Name { get; set; }
         public int CountryId { get; set; }
-        public Country Country { get; set; }
+        public virtual Country Country { get; set; }
     }
 }

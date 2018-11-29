@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using Core.Model;
 
-namespace Core.Model
+namespace Web.ViewModel
 {
     public class TimeTableViewModel
     {
         public int Id { get; set; }
         public DateTime DepartureTime { get; set; }
         public DateTime ArrivalTime { get; set; }
-        public Flight Flight { get; set; }
-        public ICollection<Reservation> Reservations { get; set; } 
+        public virtual Flight Flight { get; set; }
+        public virtual ICollection<Reservation> Reservations { get; set; } 
     }
 }

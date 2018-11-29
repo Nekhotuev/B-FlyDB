@@ -1,4 +1,5 @@
-﻿@model Core.Model.Airport
+﻿@using Web.ViewModel
+@model AirportViewModel
 
 @{
     ViewBag.Title = "Create airport";
@@ -38,12 +39,12 @@
                                     @Html.ValidationMessageFor(model => model.Code, "", new { @class = "text-danger" })
                                 </div>
                             </div>
-                            
+
                             <div class="form-group">
                                 @Html.LabelFor(model => model.City, htmlAttributes: new { @class = "control-label col-md-2" })
                                 <div class="col-md-10">
-                                    @Html.EditorFor(model => model.Code, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.Code, "", new { @class = "text-danger" })
+                                    @Html.EditorFor(model => model.City, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.City, "", new { @class = "text-danger" })
                                 </div>
                             </div>
 

@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Core.Model;
 
-namespace Core.Model
+namespace Web.ViewModel
 {
     public class PlaneViewModel
     {
@@ -18,6 +18,6 @@ namespace Core.Model
         public string FirstECSeat { set; get; }
         public string LastECSeat { get; set; }
         public double FuelConsumptionPerKm { get; set; }
-        public ICollection<Flight> Flights { get; set; }
+        public virtual ICollection<Flight> Flights { get; set; }
     }
 }

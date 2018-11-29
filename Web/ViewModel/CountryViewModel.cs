@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Core.Model;
 
-namespace Core.Model
+namespace Web.ViewModel
 {
     public class CountryViewModel
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public ICollection<City> Cities { get; set; }
+        public virtual ICollection<City> Cities { get; set; }
     }
 }

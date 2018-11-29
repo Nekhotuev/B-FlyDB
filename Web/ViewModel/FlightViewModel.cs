@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Data.Entity.ModelConfiguration.Configuration;
+using Core.Model;
 
-namespace Core.Model
+namespace Web.ViewModel
 {
     public class FlightViewModel
     {
@@ -20,9 +19,9 @@ namespace Core.Model
         public int HandLuggageAmount { get; set; }
         public int HandLuggageMaxWeight { get; set; }
 
-        public AirportScheme ArrivalAirportScheme { get; set; }
-        public AirportScheme DepartureAirportScheme { get; set; }
-        public ICollection<TimeTable> TimeTables { get; set; }
-        public Plane Plane { get; set; }
+        public virtual AirportScheme ArrivalAirportScheme { get; set; }
+        public virtual AirportScheme DepartureAirportScheme { get; set; }
+        public virtual ICollection<TimeTable> TimeTables { get; set; }
+        public virtual Plane Plane { get; set; }
     }
 }

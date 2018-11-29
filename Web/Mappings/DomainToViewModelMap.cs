@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Core.Model;
+using Web.ViewModel;
 
 namespace Web.Mappings
 {

@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using Core.Model;
 
-namespace Core.Model
+namespace Web.ViewModel
 {
     public class AirportViewModel
     {
@@ -10,6 +9,7 @@ namespace Core.Model
         public string Name { get; set; }
         public string Code { get; set; }
         public virtual City City { get; set; }
-        public virtual ICollection<AirportScheme> AirportSchemes { get; set; }
+        public virtual IEnumerable<AirportScheme> AirportSchemes { get; set; }
+        public virtual IEnumerable<City> Cities { get; set; }
     }
 }

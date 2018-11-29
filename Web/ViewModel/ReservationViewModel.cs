@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
+using Core.Model;
 
-namespace Core.Model
+namespace Web.ViewModel
 {
     public class ReservationViewModel
     {
@@ -16,8 +16,8 @@ namespace Core.Model
         public DateTime BookedDate { get; set; }
         public DateTime PaidDate { get; set; }
         public decimal FinalTicketPrice { get; set; }
-        public ServiceClass ServiceClass { get; set; }
-        public TimeTable TimeTable { get; set; }
-        public User User { get; set; }
+        public virtual ServiceClass ServiceClass { get; set; }
+        public virtual TimeTable TimeTable { get; set; }
+        public virtual User User { get; set; }
     }
 }

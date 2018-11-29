@@ -1,4 +1,5 @@
-﻿@model IEnumerable<Core.Model.Airport>
+﻿@using Web.ViewModel
+@model IEnumerable<AirportViewModel>
 
 @{
     ViewBag.Title = "Airports";
@@ -28,10 +29,10 @@
                         @foreach (var item in Model)
                         {
                             <tr>
-                                <td onclick="location.href = '@Url.Action("AirportEdit", "Classifiers", new {id = item.Id, name = item.Name, code = item.Code, city = item.City})'">
+                                <td onclick="location.href = '@Url.Action("AirportEdit", "Classifiers", new {id = item.Id})'">
                                     @Html.DisplayFor(modelItem => item.Name)
                                 </td>
-                                <td onclick="location.href = '@Url.Action("AirportEdit", "Classifiers", new {id = item.Id, name = item.Name, code = item.Code, city = item.City})'">
+                                <td onclick="location.href = '@Url.Action("AirportEdit", "Classifiers", new {id = item.Id})'">
                                     @Html.DisplayFor(modelItem => item.Code)
                                 </td>
                                 <td onclick="location.href = '@Url.Action("AirportEdit", "Classifiers", new {id = item.Id, name = item.Name, code = item.Code, city = item.City})'">

@@ -10,6 +10,7 @@ using Core.Model;
 using Data;
 using Service;
 using AutoMapper;
+using Web.ViewModel;
 
 namespace Web.Controllers
 {
@@ -17,13 +18,16 @@ namespace Web.Controllers
     {
         private IAirportService _airportService;
         private IAirportSchemeService _airportSchemeService;
+        private ICityService _cityService;
         private ITerminalService _terminalService;
         private IGateService _gateService;
 
-        public ClassifiersController(IAirportService airportService, IAirportSchemeService airportSchemeService, ITerminalService terminalService, IGateService gateService)
+        public ClassifiersController(IAirportService airportService, IAirportSchemeService airportSchemeService, ICityService cityService,
+            ITerminalService terminalService, IGateService gateService)
         {
             _airportService = airportService;
             _airportSchemeService = airportSchemeService;
+            _cityService = cityService;
             _terminalService = terminalService;
             _gateService = gateService;
         }
@@ -38,18 +42,13 @@ namespace Web.Controllers
         // GET: Airports
         public ActionResult AirportIndex()
         {
-            var airports = _airportService.GetAirports();
-            var airport = _airportService.GetAirport(1);
-            var airportscheme = _airportSchemeService.GetAirportScheme(1);
-            //List<AirportViewModel> airport = Mapper.Map<IEnumerable<Airport>, IEnumerable<AirportViewModel>>(_airportService.GetAirports());
-            return View(_airportService.GetAirports());
+            IEnumerable<AirportViewModel> airports = Mapper.Map<IEnumerable<Airport>, IEnumerable<AirportViewModel>>(_airportService.GetAirports());
+            return View(airports);
         }
 
         // GET: Airports/Create
         public ActionResult AirportCreate()
         {
-            ViewData["Terminals"] = _terminalService.GetTerminals();
-            ViewData["Gates"] = _gateService.GetGates();
             return View();
         }
 
@@ -58,11 +57,11 @@ namespace Web.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult AirportCreate([Bind(Include = "Id,Name,Code")] Airport airport)
+        public ActionResult AirportCreate([Bind(Include = "Id,Name,Code,City")] AirportViewModel airport)
         {
             if (ModelState.IsValid)
             {
-                _airportService.CreateAirport(airport);
+                _airportService.CreateAirport(Mapper.Map<AirportViewModel, Airport>(airport));
                 return RedirectToAction("AirportIndex");
             }
 
@@ -76,11 +75,12 @@ namespace Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Airport airport = _airportService.GetAirport((int)id);
+            AirportViewModel airport = Mapper.Map<Airport, AirportViewModel>(_airportService.GetAirport((int)id));
             if (airport == null)
             {
                 return HttpNotFound();
             }
+            airport.Cities = _cityService.GetCities();
             return View(airport);
         }
 
@@ -89,11 +89,11 @@ namespace Web.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult AirportEdit([Bind(Include = "Id,Name,Code,City")] Airport airport)
+        public ActionResult AirportEdit([Bind(Include = "Id,Name,Code,City")] AirportViewModel airport)
         {
             if (ModelState.IsValid)
             {
-                _airportService.UpdateAirport(airport);
+                _airportService.UpdateAirport(Mapper.Map<AirportViewModel, Airport>(airport));
                 return RedirectToAction("AirportIndex");
             }
             return View(airport);
@@ -106,7 +106,7 @@ namespace Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Airport airport = _airportService.GetAirport((int)id);
+            AirportViewModel airport = Mapper.Map<Airport, AirportViewModel>(_airportService.GetAirport((int)id));
             if (airport == null)
             {
                 return HttpNotFound();

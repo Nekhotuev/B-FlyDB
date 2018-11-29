@@ -1,4 +1,5 @@
-﻿@model Core.Model.Airport
+﻿@using Web.ViewModel
+@model AirportViewModel
 
 @{
     ViewBag.Title = "Delete " + @Model.Name;
@@ -13,7 +14,7 @@
                 </div>
                 <div class="col-md-offset-0 col-md-12">
                     <h4>@Model.Name airport</h4>
-                    <hr/>
+                    <hr />
                 </div>
 
                 @using (Html.BeginForm())
@@ -22,8 +23,8 @@
 
                     <div class="form-group">
                         <div class="col-md-offset-0 col-md-10">
-                            <input type="submit" value="Confirm" class="btn btn-danger"/>
-                            <input type="button" value="Cancel" class="btn btn-default" onclick="location.href = '@Url.Action("AirportEdit", "Classifiers", new {id = @Model.Id})'"/>
+                            <input type="submit" value="Confirm" class="btn btn-danger" />
+                            <input type="button" value="Cancel" class="btn btn-default" onclick="location.href = '@Url.Action("AirportEdit", "Classifiers", new {id = Model.Id})'" />
                         </div>
                     </div>
                 }
