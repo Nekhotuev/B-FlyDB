@@ -7,11 +7,6 @@ namespace Core.Model
 {
     public class Flight
     {
-        public Flight()
-        {
-            TimeTables = new List<TimeTable>();
-        }
-
         public int Id { get; set; }
         public string Code { get; set; }
         public decimal TicketPrice { get; set; }
@@ -25,9 +20,9 @@ namespace Core.Model
         public int HandLuggageAmount { get; set; }
         public int HandLuggageMaxWeight { get; set; }
 
-        public AirportScheme ArrivalAirportScheme { get; set; }
-        public AirportScheme DepartureAirportScheme { get; set; }
-        public ICollection<TimeTable> TimeTables { get; set; }
-        public Plane Plane { get; set; }
+        public virtual AirportScheme ArrivalAirportScheme { get; set; }
+        public virtual AirportScheme DepartureAirportScheme { get; set; }
+        public virtual ICollection<TimeTable> TimeTables { get; set; }
+        public virtual Plane Plane { get; set; }
     }
 }

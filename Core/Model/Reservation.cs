@@ -17,8 +17,8 @@ namespace Core.Model
         public DateTime PaidDate { get; set; }
         public decimal FinalTicketPrice { get; set; }
 
-        public ServiceClass ServiceClass { get; set; }
-        public TimeTable TimeTable { get; set; }
-        public User User { get; set; }
+        public virtual ServiceClass ServiceClass { get; set; }
+        public virtual TimeTable TimeTable { get; set; }
+        public virtual User User { get; set; }
     }
 }

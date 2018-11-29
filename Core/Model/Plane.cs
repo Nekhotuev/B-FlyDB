@@ -5,11 +5,6 @@ namespace Core.Model
 {
     public class Plane
     {
-        public Plane()
-        {
-            Flights = new List<Flight>();
-        }
-
         public int Id { get; set; }
         public string Manufacturer { get; set; }
         public string PlaneModel { get; set; }
@@ -23,6 +18,6 @@ namespace Core.Model
         public string FirstECSeat { set; get; }
         public string LastECSeat { get; set; }
         public double FuelConsumptionPerKm { get; set; }
-        public ICollection<Flight> Flights { get; set; }
+        public virtual ICollection<Flight> Flights { get; set; }
     }
 }

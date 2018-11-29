@@ -35,7 +35,7 @@
                                     @Html.DisplayFor(modelItem => item.Code)
                                 </td>
                                 <td onclick="location.href = '@Url.Action("AirportEdit", "Classifiers", new {id = item.Id, name = item.Name, code = item.Code, city = item.City})'">
-                                    @Html.DisplayFor(modelItem => item.City)
+                                    @Html.DisplayFor(modelItem => item.City.Name)
                                 </td>
                             </tr>
                         }

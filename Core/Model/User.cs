@@ -7,11 +7,6 @@ namespace Core.Model
 {
     public class User
     {
-        public User()
-        {
-            Reservations = new List<Reservation>();
-        }
-
         public int Id { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
@@ -23,8 +18,8 @@ namespace Core.Model
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
         public int Zipcode { get; set; }
-        public City City { get; set; }
+        public virtual City City { get; set; }
         public string Address { get; set; }
-        public ICollection<Reservation> Reservations { get; set; }
+        public virtual ICollection<Reservation> Reservations { get; set; }
     }
 }

@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using Core.Model;
 using Data;
 using Service;
+using AutoMapper;
 
 namespace Web.Controllers
 {
@@ -37,6 +38,10 @@ namespace Web.Controllers
         // GET: Airports
         public ActionResult AirportIndex()
         {
+            var airports = _airportService.GetAirports();
+            var airport = _airportService.GetAirport(1);
+            var airportscheme = _airportSchemeService.GetAirportScheme(1);
+            //List<AirportViewModel> airport = Mapper.Map<IEnumerable<Airport>, IEnumerable<AirportViewModel>>(_airportService.GetAirports());
             return View(_airportService.GetAirports());
         }
 

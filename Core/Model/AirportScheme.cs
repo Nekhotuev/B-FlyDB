@@ -6,17 +6,11 @@ namespace Core.Model
 {
     public class AirportScheme
     {
-        public AirportScheme()
-        {
-            ArrivalFlights = new List<Flight>();
-            DepartureFlights = new List<Flight>();
-        }
-
         public int Id { get; set; }
-        public Airport Airport { get; set; }
-        public Terminal Terminal { get; set; }
-        public Gate Gate { get; set; }
-        public ICollection<Flight> ArrivalFlights { get; set; }
-        public ICollection<Flight> DepartureFlights { get; set; }
+        public virtual Airport Airport { get; set; }
+        public virtual Terminal Terminal { get; set; }
+        public virtual Gate Gate { get; set; }
+        public virtual ICollection<Flight> ArrivalFlights { get; set; }
+        public virtual ICollection<Flight> DepartureFlights { get; set; }
     }
 }

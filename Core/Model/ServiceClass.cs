@@ -7,13 +7,8 @@ namespace Core.Model
 {
     public class ServiceClass
     {
-        public ServiceClass()
-        {
-            Reservations = new List<Reservation>();
-        }
-
         public int Id { get; set; }
         public string Name { get; set; }
-        public ICollection<Reservation> Reservations { get; set; }
+        public virtual ICollection<Reservation> Reservations { get; set; }
     }
 }
