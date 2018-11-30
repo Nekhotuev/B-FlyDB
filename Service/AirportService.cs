@@ -12,7 +12,7 @@ namespace Service
         IEnumerable<Airport> GetAirports();
 
         void CreateAirport(Airport airport);
-        void UpdateAirport(Airport airport);
+        void UpdateAirport(Airport airport, int cityId);
         void DeleteAirport(int id);
         void SaveAirport();
     }
@@ -21,12 +21,14 @@ namespace Service
     {
         private readonly IAirportRepository _airportRepository;
         private readonly IAirportSchemeRepository _airportSchemeRepository;
+        private readonly ICityService _cityService;
         private readonly IUnitOfWork _unitOfWork;
 
-        public AirportService(IAirportRepository airportRepository, IAirportSchemeRepository airportSchemeRepository, IUnitOfWork unitOfWork)
+        public AirportService(IAirportRepository airportRepository, IAirportSchemeRepository airportSchemeRepository, ICityService cityService, IUnitOfWork unitOfWork)
         {
             _airportRepository = airportRepository;
             _airportSchemeRepository = airportSchemeRepository;
+            _cityService = cityService;
             _unitOfWork = unitOfWork;
         }
 
@@ -48,8 +50,9 @@ namespace Service
             SaveAirport();
         }
 
-        public void UpdateAirport(Airport airport)
+        public void UpdateAirport(Airport airport, int cityId)
         {
+            airport.City = _cityService.GetCity(cityId);
             _airportRepository.Update(airport);
             SaveAirport();
         }

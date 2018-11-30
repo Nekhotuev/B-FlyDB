@@ -19,21 +19,30 @@ namespace Web.Controllers
         private IAirportService _airportService;
         private IAirportSchemeService _airportSchemeService;
         private ICityService _cityService;
-        private ITerminalService _terminalService;
+        private ICountryService _countryService;
         private IGateService _gateService;
+        private IFlightService _flightService;
+        private IPlaneService _planeService;
+        private ITerminalService _terminalService;
+        private ITimeTableService _timeTableService;
 
-        public ClassifiersController(IAirportService airportService, IAirportSchemeService airportSchemeService, ICityService cityService,
-            ITerminalService terminalService, IGateService gateService)
+        public ClassifiersController(IAirportService airportService, IAirportSchemeService airportSchemeService, 
+            ICityService cityService, ICountryService countryService, IGateService gateService, IFlightService flightService, 
+            IPlaneService planeService, ITerminalService terminalService, ITimeTableService timeTableService)
         {
             _airportService = airportService;
             _airportSchemeService = airportSchemeService;
             _cityService = cityService;
-            _terminalService = terminalService;
+            _countryService = countryService;
             _gateService = gateService;
+            _flightService = flightService;
+            _planeService = planeService;
+            _terminalService = terminalService;
+            _timeTableService = timeTableService;
         }
 
 
-        // GET: Airports
+        // GET: Empty view
         public ActionResult Index()
         {
             return View();
@@ -49,18 +58,19 @@ namespace Web.Controllers
         // GET: Airports/Create
         public ActionResult AirportCreate()
         {
-            return View();
+            AirportViewModel airport = new AirportViewModel();
+            airport.Cities = _cityService.GetCities();
+            return View(airport);
         }
 
         // POST: Airports/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult AirportCreate([Bind(Include = "Id,Name,Code,City")] AirportViewModel airport)
+        public ActionResult AirportCreate([Bind(Include = "Id,Name,Code,CityId")] AirportViewModel airport)
         {
             if (ModelState.IsValid)
             {
+                airport.City = _cityService.GetCity(airport.CityId);
                 _airportService.CreateAirport(Mapper.Map<AirportViewModel, Airport>(airport));
                 return RedirectToAction("AirportIndex");
             }
@@ -85,15 +95,14 @@ namespace Web.Controllers
         }
 
         // POST: Airports/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult AirportEdit([Bind(Include = "Id,Name,Code,City")] AirportViewModel airport)
+        public ActionResult AirportEdit([Bind(Include = "Id,Name,Code,CityId")] AirportViewModel airport)
         {
             if (ModelState.IsValid)
             {
-                _airportService.UpdateAirport(Mapper.Map<AirportViewModel, Airport>(airport));
+                //airport.City = _cityService.GetCity(airport.CityId);
+                _airportService.UpdateAirport(Mapper.Map<AirportViewModel, Airport>(airport), airport.CityId);
                 return RedirectToAction("AirportIndex");
             }
             return View(airport);
@@ -114,7 +123,7 @@ namespace Web.Controllers
             return PartialView(airport);
         }
 
-        // POST: Airports/Delete/5
+        // POST: Airports/DeleteConfirm/5
         [HttpPost, ActionName("AirportDelete")]
         [ValidateAntiForgeryToken]
         public ActionResult AirportDeleteConfirmed(int id)

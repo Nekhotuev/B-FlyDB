@@ -1,4 +1,5 @@
-﻿@using Web.ViewModel
+﻿@using Core.Model
+@using Web.ViewModel
 @model AirportViewModel
 
 @{
@@ -48,9 +49,7 @@
                             <div class="form-group">
                                 @Html.LabelFor(model => model.City, htmlAttributes: new { @class = "control-label col-md-2" })
                                 <div class="dropdown col-md-10">
-                                    @Html.DropDownListFor(m => m.Cities, new SelectList(Model.Cities, "Id", "Name"), new { htmlAttributes = new { @class = "dropdown" } })
-                                    @*@Html.EditorFor(model => model.City.Name, new { htmlAttributes = new { @class = "form-control" } })
-        @Html.ValidationMessageFor(model => model.City.Name, "", new { @class = "text-danger" })*@
+                                    @Html.DropDownListFor(m => m.CityId, new SelectList(Model.Cities, "Id", "Name"), new { @class = "form-control" })
                                 </div>
                             </div>
 

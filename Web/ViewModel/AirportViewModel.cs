@@ -11,5 +11,6 @@ namespace Web.ViewModel
         public virtual City City { get; set; }
         public virtual IEnumerable<AirportScheme> AirportSchemes { get; set; }
         public virtual IEnumerable<City> Cities { get; set; }
+        public int CityId { get; set; }
     }
 }
