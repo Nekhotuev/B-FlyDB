@@ -48,9 +48,9 @@ namespace DbTestProject
                 //Console.WriteLine(airportttt.Name + " " + airportttt.City.Name);
             }
 
-            TestRepo repo = new TestRepo();
-            //repo.Repo();
-            repo.Service();
+            //TestRepo repo = new TestRepo();
+            ////repo.Repo();
+            //repo.Service();
             
         }
     }
@@ -100,7 +100,7 @@ namespace DbTestProject
 
             Console.WriteLine(airportOld.Name + " - " + airportOld.City.Name);
 
-            _airportService.UpdateAirport(airportOld, 8);
+            _airportService.UpdateAirport(airportOld);
 
             var airportNew = _airportService.GetAirport(16);
 

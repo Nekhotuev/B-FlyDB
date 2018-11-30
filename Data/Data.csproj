@@ -50,6 +50,8 @@
   <ItemGroup>
     <Compile Include="ClassifiersContext.cs" />
     <Compile Include="Configurations\AirportConfiguration.cs" />
+    <Compile Include="Configurations\AirportSchemeConfiguration.cs" />
+    <Compile Include="Configurations\CityConfiguration.cs" />
     <Compile Include="Configurations\FlightConfiguration.cs" />
     <Compile Include="Configurations\PlaneConfiguration.cs" />
     <Compile Include="Configurations\ReservationConfiguration.cs" />

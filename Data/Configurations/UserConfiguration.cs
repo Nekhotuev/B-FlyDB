@@ -1,7 +1,7 @@
 ﻿using System.Data.Entity.ModelConfiguration;
 using Core.Model;
 
-namespace Core.Configurations
+namespace Data.Configurations
 {
     public class UserConfiguration : EntityTypeConfiguration<User>
     {
@@ -18,6 +18,7 @@ namespace Core.Configurations
             Property(p => p.PassportId).IsRequired().HasMaxLength(20);
             Property(p => p.PhoneNumber).IsRequired().HasMaxLength(20);
             Property(p => p.Email).IsRequired().HasMaxLength(50);
+            Property(p => p.CityId).IsOptional();
         }
     }
 }

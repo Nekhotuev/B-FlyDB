@@ -101,8 +101,7 @@ namespace Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                //airport.City = _cityService.GetCity(airport.CityId);
-                _airportService.UpdateAirport(Mapper.Map<AirportViewModel, Airport>(airport), airport.CityId);
+                _airportService.UpdateAirport(Mapper.Map<AirportViewModel, Airport>(airport));
                 return RedirectToAction("AirportIndex");
             }
             return View(airport);

@@ -1,7 +1,7 @@
 ﻿using System.Data.Entity;
 using Core.Model;
-using Core.Configurations;
 using Core.Conventions;
+using Data.Configurations;
 using Data.Utils;
 
 namespace Data
@@ -27,6 +27,8 @@ namespace Data
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new AirportConfiguration());
+            modelBuilder.Configurations.Add(new AirportSchemeConfiguration());
+            modelBuilder.Configurations.Add(new CityConfiguration());
             modelBuilder.Configurations.Add(new PlaneConfiguration());
             modelBuilder.Conventions.Add(new IdConvention());
             modelBuilder.Conventions.Add(new NameConvention());

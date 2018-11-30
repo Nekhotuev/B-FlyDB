@@ -1,7 +1,7 @@
 ﻿using System.Data.Entity.ModelConfiguration;
 using Core.Model;
 
-namespace Core.Configurations
+namespace Data.Configurations
 {
     public class PlaneConfiguration : EntityTypeConfiguration<Plane>
     {

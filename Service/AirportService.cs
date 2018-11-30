@@ -12,7 +12,7 @@ namespace Service
         IEnumerable<Airport> GetAirports();
 
         void CreateAirport(Airport airport);
-        void UpdateAirport(Airport airport, int cityId);
+        void UpdateAirport(Airport airport);
         void DeleteAirport(int id);
         void SaveAirport();
     }
@@ -50,9 +50,9 @@ namespace Service
             SaveAirport();
         }
 
-        public void UpdateAirport(Airport airport, int cityId)
+        public void UpdateAirport(Airport airport)
         {
-            airport.City = _cityService.GetCity(cityId);
+            airport.City = _cityService.GetCity(airport.CityId);
             _airportRepository.Update(airport);
             SaveAirport();
         }

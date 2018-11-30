@@ -1,7 +1,7 @@
 ﻿using System.Data.Entity.ModelConfiguration;
 using Core.Model;
 
-namespace Core.Configurations
+namespace Data.Configurations
 {
     public class FlightConfiguration : EntityTypeConfiguration<Flight>
     {
@@ -18,6 +18,7 @@ namespace Core.Configurations
             Property(p => p.HandLuggageMaxWeight).IsRequired();
             Property(p => p.LuggageAmount).IsRequired();
             Property(p => p.LuggageMaxWeight).IsRequired();
+            Property(p => p.PlaneId).IsOptional();
         }
     }
 }

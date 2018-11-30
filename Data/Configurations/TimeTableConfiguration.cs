@@ -1,7 +1,7 @@
 ﻿using System.Data.Entity.ModelConfiguration;
 using Core.Model;
 
-namespace Core.Configurations
+namespace Data.Configurations
 {
     public class TimeTableConfiguration: EntityTypeConfiguration<TimeTable>
     {
@@ -9,6 +9,7 @@ namespace Core.Configurations
         {
             Property(p => p.ArrivalTime).IsRequired();
             Property(p => p.DepartureTime).IsRequired();
+            Property(p => p.FlightId).IsOptional();
         }
     }
 }

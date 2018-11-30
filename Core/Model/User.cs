@@ -18,6 +18,7 @@ namespace Core.Model
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
         public int Zipcode { get; set; }
+        public int CityId { get; set; }
         public virtual City City { get; set; }
         public string Address { get; set; }
         public virtual ICollection<Reservation> Reservations { get; set; }

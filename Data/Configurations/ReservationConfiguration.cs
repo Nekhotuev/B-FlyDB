@@ -1,7 +1,7 @@
 ﻿using System.Data.Entity.ModelConfiguration;
 using Core.Model;
 
-namespace Core.Configurations
+namespace Data.Configurations
 {
     public class ReservationConfiguration : EntityTypeConfiguration<Reservation>
     {
@@ -17,6 +17,9 @@ namespace Core.Configurations
             Property(p => p.BookedDate).IsRequired();
             Property(p => p.PaidDate).IsOptional();
             Property(p => p.FinalTicketPrice).IsRequired().HasPrecision(11,2);
+            Property(p => p.ServiceClassId).IsOptional();
+            Property(p => p.TimeTableId).IsOptional();
+            Property(p => p.UserId).IsOptional();
         }
     }
 }
