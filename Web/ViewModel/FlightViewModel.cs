@@ -19,9 +19,12 @@ namespace Web.ViewModel
         public int HandLuggageAmount { get; set; }
         public int HandLuggageMaxWeight { get; set; }
 
+        public int ArrivalAirportSchemeId { get; set; }
         public virtual AirportScheme ArrivalAirportScheme { get; set; }
+        public int DepartureAirportSchemeId { get; set; }
         public virtual AirportScheme DepartureAirportScheme { get; set; }
         public virtual ICollection<TimeTable> TimeTables { get; set; }
+        public int PlaneId { get; set; }
         public virtual Plane Plane { get; set; }
     }
 }

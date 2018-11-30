@@ -16,8 +16,11 @@ namespace Web.ViewModel
         public DateTime BookedDate { get; set; }
         public DateTime PaidDate { get; set; }
         public decimal FinalTicketPrice { get; set; }
+        public int ServiceClassId { get; set; }
         public virtual ServiceClass ServiceClass { get; set; }
+        public int TimeTableId { get; set; }
         public virtual TimeTable TimeTable { get; set; }
+        public int UserId { get; set; }
         public virtual User User { get; set; }
     }
 }
