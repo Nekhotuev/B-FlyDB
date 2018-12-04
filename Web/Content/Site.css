@@ -23,14 +23,29 @@ textarea {
     max-width: 280px;
 }
 
+#classifiersindexpage {
+    margin-top: 30px;
+}
+
+.classifiersIndexText {
+    vertical-align: middle;
+    text-align: center;
+    font-style: normal;
+    font-size: 20px;
+
+}
+
 /*footer zone*/
-#footer {    
-    bottom: 0;    
-}
-/*- doesn`t work:*/
-#footer well {
+#footer {
+    bottom: 0;
     background-color: deepskyblue;
+    position: fixed;
+    width: 98.5%;
 }
+/*/*- doesn`t work:*/
+/*.container-fluid #footer well {
+    background-color: deepskyblue;
+}*/
 
 /*make cursor become pointer*/
 #linkedtable td:hover {
@@ -38,13 +53,12 @@ textarea {
 }
 
 /*increase font size on top navbar - doesn`t work*/
-#topnavbar .nav {
-    font: italic;
-    font-size: 8px;
+#topnavbar {
+    font-size: 20px;
 }
 
 /*side-bar styles zone - doesn`t work*/
-.wrapper {
+/*.wrapper {
     display: flex;
     align-items: stretch;
 }
@@ -53,21 +67,21 @@ textarea {
     min-width: 250px;
     max-width: 250px;
     min-height: 100vh;
-}
+}*/
 
-    #sidebar.active {
-        margin-left: -250px;
-    }
+/*#sidebar.active {
+    margin-left: -150px;
+}*/
 
-a[data-toggle="collapse"] {
+/*a[data-toggle="collapse"] {
     position: relative;
-}
+}*/
 
-.dropdown-toggle::after {
+/*.dropdown-toggle::after {
     display: block;
     position: absolute;
     top: 50%;
     right: 20px;
     transform: translateY(-50%);
-}
+}*/
 /*end side-bar styles zone*/

@@ -1,7 +1,11 @@
 ﻿@Styles.Render("~/Content/css")
 @*@Styles.Render("~/content/sidebar")*@
 @Scripts.Render("~/bundles/modernizr")
+@Scripts.Render("~/Content/newsidebar")
 
+@*<div class="nav-side-menu">
+    <p>Test</p>
+</div>*@
 <div class="wrapper">
     <nav id="sidebar">
         <div class="sidebar-header">
@@ -12,27 +16,27 @@
             <li class="active">
                 <a href="#airports" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Airports</a>
                 <ul class="collapse list-unstyled" id="airports">
-                    <li>@Html.ActionLink("Airports", "AirportIndex", "Classifiers")</li>
-                    <li>@Html.ActionLink("Airport scheme", "Index", "Classifiers")</li>
-                    <li>@Html.ActionLink("Terminals", "Index", "Classifiers")</li>
-                    <li>@Html.ActionLink("Gates", "Index", "Classifiers")</li>
+                    <li>@Ajax.ActionLink("Airports", "AirportIndex", "Classifiers", new AjaxOptions { UpdateTargetId = "bodycontent" })</li>
+                    <li>@Ajax.ActionLink("Airport scheme", "AirportIndex", "Classifiers", new AjaxOptions { UpdateTargetId = "bodycontent" })</li>
+                    <li>@Ajax.ActionLink("Terminals", "AirportIndex", "Classifiers", new AjaxOptions { UpdateTargetId = "bodycontent" })</li>
+                    <li>@Ajax.ActionLink("Gates", "AirportIndex", "Classifiers", new AjaxOptions { UpdateTargetId = "bodycontent" })</li>
                 </ul>
             </li>
             <li class="active">
                 <a href="#locations" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Locations</a>
                 <ul class="collapse list-unstyled" id="locations">
-                    <li>@Html.ActionLink("Cities", "Index", "Classifiers")</li>
-                    <li>@Html.ActionLink("Counties", "Index", "Classifiers")</li>
+                    <li>@Ajax.ActionLink("Cities", "AirportIndex", "Classifiers", new AjaxOptions { UpdateTargetId = "bodycontent" })</li>
+                    <li>@Ajax.ActionLink("Countries", "AirportIndex", "Classifiers", new AjaxOptions { UpdateTargetId = "bodycontent" })</li>
                 </ul>
             </li>
             <li>
-                @Html.ActionLink("Planes", "Index", "Classifiers")
+                @Ajax.ActionLink("Planes", "AirportIndex", "Classifiers", new AjaxOptions{ UpdateTargetId = "bodycontent" })
             </li>
             <li>
-                @Html.ActionLink("Flights", "Index", "Classifiers")
+                @Ajax.ActionLink("Flights", "AirportIndex", "Classifiers", new AjaxOptions { UpdateTargetId = "bodycontent" })
             </li>
             <li>
-                @Html.ActionLink("TimeTables", "Index", "Classifiers")
+                @Ajax.ActionLink("TimeTables", "AirportIndex", "Classifiers", new AjaxOptions { UpdateTargetId = "bodycontent" })
             </li>
         </ul>
     </nav>

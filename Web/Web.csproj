@@ -305,7 +305,6 @@
     <Content Include="Views\Classifiers\Index.cshtml" />
     <Content Include="Views\Classifiers\AirportSchemeCreate.cshtml" />
     <Content Include="Views\Classifiers\AirportDelete.cshtml" />
-    <Content Include="Views\Classifiers\AjaxTest.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

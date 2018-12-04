@@ -29,10 +29,7 @@
                         @foreach (var item in Model)
                         {
                             <tr>
-                                @*<td onclick="location.href = '@Url.Action("AirportEdit", "Classifiers", new {id = item.Id})'">
-                                    @Html.DisplayFor(modelItem => item.Name)
-                                </td>*@
-                                <td onclick="location.href = @Ajax.ActionLink() '@Url.Action("AirportEdit", "Classifiers", new {id = item.Id})'">
+                                <td onclick="location.href = '@Url.Action("AirportEdit", "Classifiers", new {id = item.Id})'">
                                     @Html.DisplayFor(modelItem => item.Name)
                                 </td>
                                 <td onclick="location.href = '@Url.Action("AirportEdit", "Classifiers", new {id = item.Id})'">
@@ -49,10 +46,3 @@
         </div>
     </div>
 </div>
-
-@*
-    </div>
-    <div class="col-md-1">
-        <input type="button" class="btn btn-danger btn-sm" value="Delete" onclick="location.href = '@Url.Action("Delete", "Classifiers", new { id = item.Id })'" />
-    </div>
-*@

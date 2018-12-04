@@ -48,17 +48,12 @@ namespace Web.Controllers
             return View();
         }
 
-        //Ajax partial view test action
-        public ActionResult AjaxTest()
-        {
-            return PartialView();
-        }
-
         // GET: Airports
         public ActionResult AirportIndex()
         {
             IEnumerable<AirportViewModel> airports = Mapper.Map<IEnumerable<Airport>, IEnumerable<AirportViewModel>>(_airportService.GetAirports());
-            return View(airports);
+            return PartialView(airports);
+            //return View(airports);
         }
 
         // GET: Airports/Create
