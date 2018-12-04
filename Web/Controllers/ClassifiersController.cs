@@ -48,6 +48,12 @@ namespace Web.Controllers
             return View();
         }
 
+        //Ajax partial view test action
+        public ActionResult AjaxTest()
+        {
+            return PartialView();
+        }
+
         // GET: Airports
         public ActionResult AirportIndex()
         {
