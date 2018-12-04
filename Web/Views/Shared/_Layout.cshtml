@@ -9,7 +9,7 @@
 
 </head>
 <body>
-<div class="navbar navbar-inverse navbar-fixed-top">
+<div class="navbar navbar-inverse navbar-fixed-top" id="topNavBar">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -21,12 +21,12 @@
             @Html.ActionLink("BFly", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
         </div>
         <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav" id="topnavbar">
-                <li>@Html.ActionLink("Find a flight", "Index", "Home")</li>
-                <li>@Html.ActionLink("Register on flight", "Index", "Home")</li>
-                <li>@Html.ActionLink("Prepare to trip", "Index", "Home")</li>
+            <ul class="nav navbar-nav">
+                <li style="color:black">@Html.ActionLink("Find a flight", "Index", "Home", new object{}, new { @class = "actionLink"})
+                <li style="color:black">@Html.ActionLink("Register on flight", "Index", "Home", new object { }, new { @class = "actionLink" })</li>
+                <li style="color:black">@Html.ActionLink("Prepare to trip", "Index", "Home", new object { }, new { @class = "actionLink" })</li>
                 @*use identity to hide lements if not admin login*@
-                <li>@Html.ActionLink("Classifiers", "Index", "Classifiers")</li>
+                <li>@Html.ActionLink("Classifiers", "Index", "Classifiers", new object { }, new { @class = "actionLink" })</li>
             </ul>
             @Html.Partial("_LoginPartial")
         </div>
@@ -50,17 +50,17 @@
                 <div class="col-md-3 mb-md-0 mb-3">
                     <h5 class="text-uppercase">Information</h5>
                     <ul class="list-unstyled">
-                        <li>@Html.ActionLink("Before flight", "Index", "Home")</li>
-                        <li>@Html.ActionLink("On board", "Index", "Home")</li>
-                        <li>@Html.ActionLink("In airport", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Before flight", "Index", "Home", new object{}, new { @class = "actionLink"})</li>
+                        <li>@Html.ActionLink("On board", "Index", "Home", new object { }, new { @class = "actionLink" })</li>
+                        <li>@Html.ActionLink("In airport", "Index", "Home", new object { }, new { @class = "actionLink" })</li>
                     </ul>
                 </div>
                 <div class="col-md-3 mb-md-0 mb-3">
                     <h5 class="text-uppercase">For clients</h5>
                     <ul class="list-unstyled">
-                        <li>@Html.ActionLink("Register on flight", "Index", "Home")</li>
-                        <li>@Html.ActionLink("News", "Index", "Home")</li>
-                        <li>@Html.ActionLink("Contacts", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Register on flight", "Index", "Home", new object { }, new { @class = "actionLink" })</li>
+                        <li>@Html.ActionLink("News", "Index", "Home", new object { }, new { @class = "actionLink" })</li>
+                        <li>@Html.ActionLink("Contacts", "Index", "Home", new object { }, new { @class = "actionLink" })</li>
                     </ul>
                 </div>
             </div>

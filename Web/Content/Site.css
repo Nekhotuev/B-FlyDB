@@ -23,6 +23,7 @@ textarea {
     max-width: 280px;
 }
 
+/*classifiers index view set properties to well*/
 #classifiersindexpage {
     margin-top: 30px;
 }
@@ -32,30 +33,54 @@ textarea {
     text-align: center;
     font-style: normal;
     font-size: 20px;
-
 }
+/*end of classifiers index view zone*/
 
 /*footer zone*/
 #footer {
     bottom: 0;
-    background-color: deepskyblue;
+    background-color: #66b3ff;
     position: fixed;
     width: 98.5%;
 }
-/*/*- doesn`t work:*/
-/*.container-fluid #footer well {
-    background-color: deepskyblue;
-}*/
 
 /*make cursor become pointer*/
 #linkedtable td:hover {
     cursor:pointer;
 }
 
-/*increase font size on top navbar - doesn`t work*/
-#topnavbar {
-    font-size: 20px;
+#sideBarDropDownToggle {
+    color: darkblue;
 }
+
+.ajaxLinks {
+    color: darkblue;
+}
+
+.actionLink {
+    color: black;
+    font-size: 16px;
+}
+
+.icon-bar {
+    color: black;
+}
+
+/*TODO: replace with bootstrap theme*/
+#topNavBar {
+    background-color: #66b3ff;
+    color: black;
+}
+
+/*increase font size on top navbar*/
+#topNavBarText {
+    font-size: 26px;
+    color: chocolate;
+}
+
+/*#topNavBar {
+    background-color: deepskyblue;
+}*/
 
 /*side-bar styles zone - doesn`t work*/
 /*.wrapper {

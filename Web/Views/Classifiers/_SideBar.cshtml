@@ -14,29 +14,29 @@
 
         <ul class="list-unstyled components">
             <li class="active">
-                <a href="#airports" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Airports</a>
+                <a href="#airports" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle" id="sideBarDropDownToggle">Airports</a>
                 <ul class="collapse list-unstyled" id="airports">
-                    <li>@Ajax.ActionLink("Airports", "AirportIndex", "Classifiers", new AjaxOptions { UpdateTargetId = "bodycontent" })</li>
-                    <li>@Ajax.ActionLink("Airport scheme", "AirportIndex", "Classifiers", new AjaxOptions { UpdateTargetId = "bodycontent" })</li>
-                    <li>@Ajax.ActionLink("Terminals", "AirportIndex", "Classifiers", new AjaxOptions { UpdateTargetId = "bodycontent" })</li>
-                    <li>@Ajax.ActionLink("Gates", "AirportIndex", "Classifiers", new AjaxOptions { UpdateTargetId = "bodycontent" })</li>
+                    <li>@Ajax.ActionLink("Airports", "AirportIndex", "Classifiers", new AjaxOptions { UpdateTargetId = "bodycontent" }, new { @class = "ajaxLinks"})</li>
+                    <li>@Ajax.ActionLink("Airport scheme", "AirportIndex", "Classifiers", new AjaxOptions { UpdateTargetId = "bodycontent" }, new { @class = "ajaxLinks" })</li>
+                    <li>@Ajax.ActionLink("Terminals", "AirportIndex", "Classifiers", new AjaxOptions { UpdateTargetId = "bodycontent" }, new { @class = "ajaxLinks" })</li>
+                    <li>@Ajax.ActionLink("Gates", "AirportIndex", "Classifiers", new AjaxOptions { UpdateTargetId = "bodycontent" }, new { @class = "ajaxLinks" })</li>
                 </ul>
             </li>
             <li class="active">
-                <a href="#locations" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Locations</a>
+                <a href="#locations" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle" id="sideBarDropDownToggle">Locations</a>
                 <ul class="collapse list-unstyled" id="locations">
-                    <li>@Ajax.ActionLink("Cities", "AirportIndex", "Classifiers", new AjaxOptions { UpdateTargetId = "bodycontent" })</li>
-                    <li>@Ajax.ActionLink("Countries", "AirportIndex", "Classifiers", new AjaxOptions { UpdateTargetId = "bodycontent" })</li>
+                    <li>@Ajax.ActionLink("Cities", "AirportIndex", "Classifiers", new AjaxOptions { UpdateTargetId = "bodycontent" }, new { @class = "ajaxLinks" })</li>
+                    <li>@Ajax.ActionLink("Countries", "AirportIndex", "Classifiers", new AjaxOptions { UpdateTargetId = "bodycontent" }, new { @class = "ajaxLinks" })</li>
                 </ul>
             </li>
             <li>
-                @Ajax.ActionLink("Planes", "AirportIndex", "Classifiers", new AjaxOptions{ UpdateTargetId = "bodycontent" })
+                @Ajax.ActionLink("Planes", "AirportIndex", "Classifiers", new AjaxOptions{ UpdateTargetId = "bodycontent" }, new { @class = "ajaxLinks" })
             </li>
             <li>
-                @Ajax.ActionLink("Flights", "AirportIndex", "Classifiers", new AjaxOptions { UpdateTargetId = "bodycontent" })
+                @Ajax.ActionLink("Flights", "AirportIndex", "Classifiers", new AjaxOptions { UpdateTargetId = "bodycontent" }, new { @class = "ajaxLinks" })
             </li>
             <li>
-                @Ajax.ActionLink("TimeTables", "AirportIndex", "Classifiers", new AjaxOptions { UpdateTargetId = "bodycontent" })
+                @Ajax.ActionLink("TimeTables", "AirportIndex", "Classifiers", new AjaxOptions { UpdateTargetId = "bodycontent" }, new { @class = "ajaxLinks" })
             </li>
         </ul>
     </nav>

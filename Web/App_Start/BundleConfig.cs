@@ -31,9 +31,6 @@ namespace Web
             
             bundles.Add(new StyleBundle("~/Content/sidebar").Include(
                 "~/Content/sidebar.css"));
-
-            bundles.Add(new StyleBundle("~/Content/newsidebar").Include(
-                "~/Content/newsidebar.css"));
         }
     }
 }
