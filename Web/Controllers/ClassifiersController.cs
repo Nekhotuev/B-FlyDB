@@ -55,6 +55,12 @@ namespace Web.Controllers
             return PartialView(airports);
             //return View(airports);
         }
+        
+        public ActionResult AirportIndexFull()
+        {
+            IEnumerable<AirportViewModel> airports = Mapper.Map<IEnumerable<Airport>, IEnumerable<AirportViewModel>>(_airportService.GetAirports());
+            return View("AirportIndex", airports);
+        }
 
         // GET: Airports/Create
         public ActionResult AirportCreate()
@@ -73,7 +79,7 @@ namespace Web.Controllers
             {
                 airport.City = _cityService.GetCity(airport.CityId);
                 _airportService.CreateAirport(Mapper.Map<AirportViewModel, Airport>(airport));
-                return RedirectToAction("AirportIndex");
+                return RedirectToAction("AirportIndexFull");
             }
 
             return View(airport);
@@ -103,7 +109,7 @@ namespace Web.Controllers
             if (ModelState.IsValid)
             {
                 _airportService.UpdateAirport(Mapper.Map<AirportViewModel, Airport>(airport));
-                return RedirectToAction("AirportIndex");
+                return RedirectToAction("AirportIndexFull");
             }
             return View(airport);
         }
@@ -129,7 +135,14 @@ namespace Web.Controllers
         public ActionResult AirportDeleteConfirmed(int id)
         {
             _airportService.DeleteAirport(id);
-            return RedirectToAction("AirportIndex");
+            return RedirectToAction("AirportIndexFull");
+        }
+
+        // GET: Airports
+        public ActionResult TerminalIndex()
+        {
+            IEnumerable<TerminalViewModel> terminals = Mapper.Map<IEnumerable<Terminal>, IEnumerable<TerminalViewModel>>(_terminalService.GetTerminals());
+            return PartialView(terminals);
         }
     }
 }

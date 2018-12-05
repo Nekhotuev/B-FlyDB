@@ -73,7 +73,7 @@
 
         .nav-side-menu ul .sub-menu li,
         .nav-side-menu li .sub-menu li {
-            background-color: #181c20;
+            /*background-color: #181c20;*/
             border: none;
             line-height: 28px;
             border-bottom: 1px solid #23282e;

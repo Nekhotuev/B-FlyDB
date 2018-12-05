@@ -6,7 +6,7 @@
     <title>@ViewBag.Title - BFly</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
+    <link href="~/Content/fa.all.css" rel="stylesheet">
 </head>
 <body>
 <div class="navbar navbar-inverse navbar-fixed-top" id="topNavBar">
@@ -22,11 +22,11 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li style="color:black">@Html.ActionLink("Find a flight", "Index", "Home", new object{}, new { @class = "actionLink"})
-                <li style="color:black">@Html.ActionLink("Register on flight", "Index", "Home", new object { }, new { @class = "actionLink" })</li>
-                <li style="color:black">@Html.ActionLink("Prepare to trip", "Index", "Home", new object { }, new { @class = "actionLink" })</li>
-                @*use identity to hide lements if not admin login*@
-                <li>@Html.ActionLink("Classifiers", "Index", "Classifiers", new object { }, new { @class = "actionLink" })</li>
+                <li>@Html.ActionLink("Find a flight", "Index", "Home")</li>
+                <li>@Html.ActionLink("Register on flight", "Index", "Home")</li>
+                <li>@Html.ActionLink("Prepare to trip", "Index", "Home")</li>
+                @*use identity to hide elements if not admin login*@
+                <li>@Html.ActionLink("Classifiers", "Index", "Classifiers")</li>
             </ul>
             @Html.Partial("_LoginPartial")
         </div>
@@ -40,23 +40,23 @@
 <div class="container-fluid">
     <p />
     <footer class="well" id="footer">
-        <div class="container-fluid text-center text-md-left">
+        <div class="container-fluid text-center">
             <div class="row">
-                <div class="col-md-6 mt-md-0 mt-3">
-                    <h5 class="text-center">BFly - we provide the best service for you!</h5>
-                    <p style="position: center">Here you can find useful information how to prepre to flight, what can you bring on board, information about luggage.</p>
-                    <p>Contast us if you have any problems or would like to cancel your reservation.</p>
+                <div class="col-md-6">
+                    <h5 class="footer-copyright">BFly - we provide the best service for you!</h5>
+                    <p class="footer-copyright">Here you can find useful information how to prepare to flight, what can you bring on board, information about luggage.</p>
+                    <p class="footer-copyright">Contact us if you have any problems or would like to cancel your reservation.</p>
                 </div>
-                <div class="col-md-3 mb-md-0 mb-3">
-                    <h5 class="text-uppercase">Information</h5>
+                <div class="col-md-3">
+                    <h5 class="text-uppercase footer-copyright">Information</h5>
                     <ul class="list-unstyled">
-                        <li>@Html.ActionLink("Before flight", "Index", "Home", new object{}, new { @class = "actionLink"})</li>
+                        <li>@Html.ActionLink("Before flight", "Index", "Home", new object { }, new { @class = "actionLink" })</li>
                         <li>@Html.ActionLink("On board", "Index", "Home", new object { }, new { @class = "actionLink" })</li>
                         <li>@Html.ActionLink("In airport", "Index", "Home", new object { }, new { @class = "actionLink" })</li>
                     </ul>
                 </div>
-                <div class="col-md-3 mb-md-0 mb-3">
-                    <h5 class="text-uppercase">For clients</h5>
+                <div class="col-md-3">
+                    <h5 class="text-uppercase footer-copyright">For clients</h5>
                     <ul class="list-unstyled">
                         <li>@Html.ActionLink("Register on flight", "Index", "Home", new object { }, new { @class = "actionLink" })</li>
                         <li>@Html.ActionLink("News", "Index", "Home", new object { }, new { @class = "actionLink" })</li>
@@ -66,7 +66,7 @@
             </div>
         </div>
         <div class="footer-copyright text-center">
-            <hr style="color:black"/>
+            <hr style="color:whitesmoke"/>
             <p>&copy; @DateTime.Now.Year - BFly. All rights reserved.</p>
         </div>
     </footer>

@@ -1,8 +1,8 @@
 ﻿@using Web.ViewModel
-@model IEnumerable<AirportViewModel>
+@model IEnumerable<TerminalViewModel>
 
 @{
-    ViewBag.Title = "Airports";
+    ViewBag.Title = "Terminals";
 }
 
 <div class="container-fluid">
@@ -12,10 +12,10 @@
         </div>
         <div class="col-md-10" id="bodycontent">
             <div class="row">
-                <h2>Airports</h2>
+                <h2>Terminals</h2>
             </div>
             <div class="row">
-                <input type="button" class="btn btn-default" value="Create new" onclick="location.href = '@Url.Action("AirportCreate", "Classifiers")'"/>
+                <input type="button" class="btn btn-default" value="Create new" onclick="location.href = '@Url.Action("AirportCreate", "Classifiers")'" />
                 <p />
             </div>
             <div class="row">
@@ -23,20 +23,12 @@
                     <table class="table table-bordered table-hover" id="linkedtable">
                         <tr>
                             <th>@Html.DisplayNameFor(model => model.Name)</th>
-                            <th>@Html.DisplayNameFor(model => model.Code)</th>
-                            <th>@Html.DisplayNameFor(model => model.City)</th>
                         </tr>
                         @foreach (var item in Model)
                         {
                             <tr>
                                 <td class="linkedTableText" onclick="location.href = '@Url.Action("AirportEdit", "Classifiers", new {id = item.Id})'">
                                     @Html.DisplayFor(modelItem => item.Name)
-                                </td>
-                                <td class="linkedTableText" onclick="location.href = '@Url.Action("AirportEdit", "Classifiers", new {id = item.Id})'">
-                                    @Html.DisplayFor(modelItem => item.Code)
-                                </td>
-                                <td class="linkedTableText" onclick="location.href = '@Url.Action("AirportEdit", "Classifiers", new {id = item.Id})'">
-                                    @Html.DisplayFor(modelItem => item.City.Name)
                                 </td>
                             </tr>
                         }
