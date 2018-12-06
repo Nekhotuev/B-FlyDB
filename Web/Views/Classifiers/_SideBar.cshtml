@@ -1,94 +1,43 @@
 ﻿@Styles.Render("~/Content/css")
 @Scripts.Render("~/bundles/modernizr")
-@Scripts.Render("~/Content/newsidebar")
+@Styles.Render("~/Content/fa")
 
-<div class="wrapper">
-    <nav class="nav-side-menu" id="sidebar">
-        <div class="sidebar-header">
-            <h4>Classifiers</h4>
-        </div>
+ <div class="wrapper">
+    <div class="nav-side-menu">
+        <div class="menu-list">
 
-        <ul>
-            <li class="active">
-                <a href="#airports" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Airports</a>
+            <ul id="menu-content" class="menu-content">
+
+                <li data-toggle="collapse" data-target="#airports" class="collapsed active">
+                    <a href="#"><i class="fa fa-houzz fa-lg"></i> Airports <span class="arrow"></span></a>
+                </li>
                 <ul class="sub-menu collapse" id="airports">
-                    <li>@Ajax.ActionLink("Airports", "AirportIndex", "Classifiers", new AjaxOptions { UpdateTargetId = "bodycontent" }, new { @class = "ajaxSmallLinks"})</li>
-                    <li>@Ajax.ActionLink("Airport scheme", "AirportIndex", "Classifiers", new AjaxOptions { UpdateTargetId = "bodycontent" }, new { @class = "ajaxSmallLinks" })</li>
+                    <li>@Ajax.ActionLink("Airports", "AirportIndex", "Classifiers", new AjaxOptions { UpdateTargetId = "bodycontent" }, new { @class = "ajaxSmallLinks" })</li>
+                    <li>@Ajax.ActionLink("Airport schemes", "AirportIndex", "Classifiers", new AjaxOptions { UpdateTargetId = "bodycontent" }, new { @class = "ajaxSmallLinks" })</li>
                     <li>@Ajax.ActionLink("Terminals", "TerminalIndex", "Classifiers", new AjaxOptions { UpdateTargetId = "bodycontent" }, new { @class = "ajaxSmallLinks" })</li>
                     <li>@Ajax.ActionLink("Gates", "AirportIndex", "Classifiers", new AjaxOptions { UpdateTargetId = "bodycontent" }, new { @class = "ajaxSmallLinks" })</li>
                 </ul>
-            </li>
-            <li class="active">
-                <a href="#locations" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Locations</a>
+
+                <li data-toggle="collapse" data-target="#locations" class="collapsed active">
+                    <a href="#"><i class="fa fa-map-marker fa-lg"></i> Locations <span class="arrow"></span></a>
+                </li>
                 <ul class="sub-menu collapse" id="locations">
                     <li>@Ajax.ActionLink("Cities", "AirportIndex", "Classifiers", new AjaxOptions { UpdateTargetId = "bodycontent" }, new { @class = "ajaxSmallLinks" })</li>
                     <li>@Ajax.ActionLink("Countries", "AirportIndex", "Classifiers", new AjaxOptions { UpdateTargetId = "bodycontent" }, new { @class = "ajaxSmallLinks" })</li>
                 </ul>
-            </li>
-            <li class="sub-menu active">
-                @Ajax.ActionLink("Planes", "AirportIndex", "Classifiers", new AjaxOptions { UpdateTargetId = "bodycontent" }, new { @class = "ajaxLinks" })
-            </li>
-            <li class="sub-menu active">
-                @Ajax.ActionLink("Flights", "AirportIndex", "Classifiers", new AjaxOptions { UpdateTargetId = "bodycontent" }, new { @class = "ajaxLinks" })
-            </li>
-            <li class="sub-menu active">
-                @Ajax.ActionLink("TimeTables", "AirportIndex", "Classifiers", new AjaxOptions { UpdateTargetId = "bodycontent" }, new { @class = "ajaxLinks" })
-            </li>
-        </ul>
-    </nav>
-</div>
 
-@*<div class="nav-side-menu">
-    <div class="brand">Press Curing Control</div>
-    <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+                <li>
+                    <a href="#"><i class="fa fa-plane fa-lg"></i>@Ajax.ActionLink("Planes", "AirportIndex", "Classifiers", new AjaxOptions { UpdateTargetId = "bodycontent" }, new { @class = "ajaxLinks" })</a>
+                </li>
 
-    <div class="menu-list">
+                <li>
+                    <a href="#"><i class="fa fa-clipboard fa-lg"></i>@Ajax.ActionLink("Flights", "AirportIndex", "Classifiers", new AjaxOptions { UpdateTargetId = "bodycontent" }, new { @class = "ajaxLinks" })</a>
+                </li>
 
-        <ul id="menu-content" class="menu-content collapse out">
-            <li>
-                <a href="#">
-                    <i class="fa fa-dashboard fa-lg"></i> Dashboard
-                </a>
-            </li>
-            <li data-toggle="collapse" data-target="#products" class="collapsed active">
-                <a href="#"><i class="fa fa-gift fa-lg"></i> Anlagenauswahl <span class="arrow"></span></a>
-            </li>
-            <ul class="sub-menu collapse" id="products">
-                <li class="active"><a href="#">RFT-H1</a></li>
-                <li><a href="#">RFT-H2</a></li>
-                <li><a href="#">BTB-H1</a></li>
-                <li><a href="#">BTB-H2</a></li>
+                <li>
+                    <a href="#"><i class="fa fa-calendar fa-lg"></i>@Ajax.ActionLink("Time tables", "AirportIndex", "Classifiers", new AjaxOptions { UpdateTargetId = "bodycontent" }, new { @class = "ajaxLinks" })</a>
+                </li>
             </ul>
-
-            <li data-toggle="collapse" data-target="#service" class="collapsed">
-                <a href="#"><i class="fa fa-globe fa-lg"></i> Auswertungen <span class="arrow"></span></a>
-            </li>
-            <ul class="sub-menu collapse" id="service">
-                <li>Trendmonitoring</li>
-                <li>Alarmmonitoring</li>
-                <li>Audit-Trail</li>
-            </ul>
-
-            <li data-toggle="collapse" data-target="#new" class="collapsed">
-                <a href="#"><i class="fa fa-car fa-lg"></i> Reporting <span class="arrow"></span></a>
-            </li>
-            <ul class="sub-menu collapse" id="new">
-                <li>Alarmstatistik</li>
-                <li>Prozessfähigkeit</li>
-            </ul>
-
-            <li>
-                <a href="#">
-                    <i class="fa fa-user fa-lg"></i> Profile
-                </a>
-            </li>
-            <li data-toggle="collapse" data-target="#new" class="collapsed">
-                <a href="#"><i class="fa fa-car fa-lg"></i> Service <span class="arrow"></span></a>
-            </li>
-            <ul class="sub-menu collapse" id="new">
-                <li>Sensorkonfiguration</li>
-                <li>Betriebsarten</li>
-            </ul>
-        </ul>
+        </div>
     </div>
-</div>*@
+</div>
