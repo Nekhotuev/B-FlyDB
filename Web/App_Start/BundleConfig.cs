@@ -31,6 +31,9 @@ namespace Web
             
             bundles.Add(new StyleBundle("~/Content/fa").Include(
                 "~/Content/font-awesome.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/deletePopUp").Include(
+                "~/Scripts/DeletePopUp.js"));
         }
     }
 }
