@@ -76,6 +76,10 @@ textarea {
     color: whitesmoke;
 }
 
+.createButton {
+    padding-bottom: 15px;
+}
+
 /*side-bar styles zone*/
 .wrapper {
     display: flex;
