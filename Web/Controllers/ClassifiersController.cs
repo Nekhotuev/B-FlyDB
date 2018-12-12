@@ -53,9 +53,17 @@ namespace Web.Controllers
         {
             IEnumerable<AirportViewModel> airports = Mapper.Map<IEnumerable<Airport>, IEnumerable<AirportViewModel>>(_airportService.GetAirports());
             return PartialView(airports);
-            //return View(airports);
         }
-        
+
+        //GET: airports names for autocomplete search
+        public ActionResult AirportSearch(string term)
+        {
+            //send airport collection and work with it, get names from it and use values from it
+            //IEnumerable<AirportViewModel> airports = Mapper.Map<IEnumerable<Airport>, IEnumerable<AirportViewModel>>(_airportService.GetAirports(term));
+            
+            return Json(_airportService.GetAirportNames(term), JsonRequestBehavior.AllowGet);
+        }
+
         public ActionResult AirportIndexFull()
         {
             IEnumerable<AirportViewModel> airports = Mapper.Map<IEnumerable<Airport>, IEnumerable<AirportViewModel>>(_airportService.GetAirports());

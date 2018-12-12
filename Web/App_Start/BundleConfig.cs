@@ -22,18 +22,19 @@ namespace Web
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/ajax").Include(
-                "~/Scripts/jquery.unobtrusive-ajax.js"));
+            bundles.Add(new ScriptBundle("~/bundles/ajax").Include("~/Scripts/jquery.unobtrusive-ajax.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
             
-            bundles.Add(new StyleBundle("~/Content/fa").Include(
-                "~/Content/font-awesome.css"));
+            bundles.Add(new StyleBundle("~/Content/fa").Include("~/Content/font-awesome.css"));
 
-            bundles.Add(new ScriptBundle("~/bundles/deletePopUp").Include(
-                "~/Scripts/DeletePopUp.js"));
+            bundles.Add(new ScriptBundle("~/bundles/deletePopUp").Include("~/Scripts/DeletePopUp.js"));
+
+            bundles.Add(new ScriptBundle("~/Scripts/jquery-ui").Include("~/Scripts/jquery-ui-1.12.1.js"));
+
+            bundles.Add(new StyleBundle("~/Content/jquery-ui").Include("~/Content/themes/base/all.css"));
         }
     }
 }

@@ -5,6 +5,9 @@
     ViewBag.Title = "Airports";
 }
 
+@Scripts.Render("~/Scripts/jquery-ui")
+@Styles.Render("~/Content/jquery-ui")
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-2">
@@ -12,13 +15,24 @@
         </div>
         <div class="col-md-10" id="bodycontent">
             <div class="row">
-                <h2>Airports</h2>
+                <div class="col-md-12">
+                    <h2>Airports</h2>
+                </div>
             </div>
             <div class="row createButton">
-                <input type="button" class="btn btn-default" value="Create new" onclick="location.href = '@Url.Action("AirportCreate", "Classifiers")'"/>
+                <div class="col-md-12">
+                    <input type="button" class="btn btn-default" value="Create new" onclick="location.href = '@Url.Action("AirportCreate", "Classifiers")'" />
+                </div>
             </div>
-            <div class="row">
-
+            @*add edit link method*@
+            <div class="row createButton">
+                <div class="col-md-2">
+                    <input type="text" name="name" class="form-control" id="searchBox" data-autocomplete-source='@Url.Action("AirportSearch", "Classifiers")' />
+                </div>
+                <div class="col-md-2">
+                    <input type="button" class="btn btn-default" value="Search" />
+                    @*<input type="button" class="btn btn-default" value="Search" onclick="location.href = '@Url.Action("AirportEdit", "Classifiers", new {id = item.Id})'" />*@
+                </div>
             </div>
             <div class="row">
                 <div class="col-md-6">
@@ -48,3 +62,13 @@
         </div>
     </div>
 </div>
+
+@*script get names from controllers method*@
+<script>
+    $(function () {
+        $("[data-autocomplete-source]").each(function () {
+            var target = $(this);
+            target.autocomplete({ source: target.attr("data-autocomplete-source") });
+        });
+    });
+</script>

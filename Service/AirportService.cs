@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Core.Model;
 using Data.Infrastructure;
@@ -10,6 +11,8 @@ namespace Service
     {
         Airport GetAirport(int id);
         IEnumerable<Airport> GetAirports();
+        IEnumerable<Airport> GetAirports(string searchText);
+        IEnumerable<string> GetAirportNames(string searchText);
 
         void CreateAirport(Airport airport);
         void UpdateAirport(Airport airport);
@@ -42,6 +45,30 @@ namespace Service
         public IEnumerable<Airport> GetAirports()
         {
             return _airportRepository.GetAll();
+        }
+
+        public IEnumerable<Airport> GetAirports(string searchText)
+        {
+            if (!String.IsNullOrEmpty(searchText))
+            {
+                return _airportRepository.GetMany(a => a.Name.Contains(searchText));
+            }
+            else
+            {
+                return _airportRepository.GetAll();
+            }
+        }
+
+        public IEnumerable<string> GetAirportNames(string searchText)
+        {
+            if (!String.IsNullOrEmpty(searchText))
+            {
+                return _airportRepository.GetMany(a => a.Name.Contains(searchText)).Select(a => a.Name).ToList();
+            }
+            else
+            {
+                return _airportRepository.GetAll().Select(a => a.Name).ToList();
+            }
         }
 
         public void CreateAirport(Airport airport)
