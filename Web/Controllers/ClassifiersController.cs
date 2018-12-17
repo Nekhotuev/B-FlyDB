@@ -49,9 +49,11 @@ namespace Web.Controllers
         }
 
         // GET: Airports
-        public ActionResult AirportIndex()
+        public ActionResult AirportIndex(int pageNumber = 1)
         {
-            IEnumerable<AirportViewModel> airports = Mapper.Map<IEnumerable<Airport>, IEnumerable<AirportViewModel>>(_airportService.GetAirports());
+            int pageSize = 10;
+            IEnumerable<AirportViewModel> airports = Mapper.Map<IEnumerable<Airport>, IEnumerable<AirportViewModel>>(_airportService.GetAirports(pageNumber, pageSize));
+            //IEnumerable<AirportViewModel> airports = Mapper.Map<IEnumerable<Airport>, IEnumerable<AirportViewModel>>(_airportService.GetAirports());
             return PartialView(airports);
         }
 
@@ -60,7 +62,7 @@ namespace Web.Controllers
         {
             //send airport collection and work with it, get names from it and use values from it
             //IEnumerable<AirportViewModel> airports = Mapper.Map<IEnumerable<Airport>, IEnumerable<AirportViewModel>>(_airportService.GetAirports(term));
-            
+            //add in json id and pass it like a dictionary id - name, then open pass id in edit method if something were choosen in autocomplete field.
             return Json(_airportService.GetAirportNames(term), JsonRequestBehavior.AllowGet);
         }
 

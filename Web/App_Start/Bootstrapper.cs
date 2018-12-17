@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Web;
+﻿using System.Reflection;
 using System.Web.Mvc;
 using Autofac;
 using Autofac.Integration.Mvc;
@@ -11,7 +7,7 @@ using Data.Repositories;
 using Service;
 using Web.Mappings;
 
-namespace Web.App_Start
+namespace Web
 {
     public static class Bootstrapper
     {
