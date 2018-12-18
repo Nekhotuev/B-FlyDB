@@ -52,8 +52,12 @@ namespace Web.Controllers
         public ActionResult AirportIndex(int pageNumber = 1)
         {
             int pageSize = 10;
-            IEnumerable<AirportViewModel> airports = Mapper.Map<IEnumerable<Airport>, IEnumerable<AirportViewModel>>(_airportService.GetAirports(pageNumber, pageSize));
-            //IEnumerable<AirportViewModel> airports = Mapper.Map<IEnumerable<Airport>, IEnumerable<AirportViewModel>>(_airportService.GetAirports());
+            ViewData["PageNumber"] = pageNumber;
+
+            IEnumerable<AirportViewModel> airports = Mapper.Map<IEnumerable<Airport>, IEnumerable<AirportViewModel>>(_airportService.GetAirports(pageNumber, pageSize, out var totalPages));
+
+            ViewData["TotalPages"] = totalPages;
+
             return PartialView(airports);
         }
 
@@ -66,9 +70,14 @@ namespace Web.Controllers
             return Json(_airportService.GetAirportNames(term), JsonRequestBehavior.AllowGet);
         }
 
-        public ActionResult AirportIndexFull()
+        public ActionResult AirportIndexFull(int pageNumber = 1)
         {
-            IEnumerable<AirportViewModel> airports = Mapper.Map<IEnumerable<Airport>, IEnumerable<AirportViewModel>>(_airportService.GetAirports());
+            int pageSize = 10;
+            ViewData["PageNumber"] = pageNumber;
+
+            IEnumerable<AirportViewModel> airports = Mapper.Map<IEnumerable<Airport>, IEnumerable<AirportViewModel>>(_airportService.GetAirports(pageNumber, pageSize, out var totalPages));
+
+            ViewData["TotalPages"] = totalPages;
             return View("AirportIndex", airports);
         }
 

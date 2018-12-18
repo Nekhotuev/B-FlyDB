@@ -12,7 +12,7 @@ namespace Service
         Airport GetAirport(int id);
         IEnumerable<Airport> GetAirports();
         IEnumerable<Airport> GetAirports(string searchText);
-        IEnumerable<Airport> GetAirports(int pageNumber, int pageSize);
+        IEnumerable<Airport> GetAirports(int pageNumber, int pageSize, out int totalPages);
         IEnumerable<string> GetAirportNames(string searchText);
 
         void CreateAirport(Airport airport);
@@ -60,9 +60,19 @@ namespace Service
             }
         }
 
-        public IEnumerable<Airport> GetAirports(int pageNumber, int pageSize)
+        public IEnumerable<Airport> GetAirports(int pageNumber, int pageSize, out int totalPages)
         {
-            return _airportRepository.GetAll().Skip(pageSize * (pageNumber - 1)).Take(pageSize);
+            var allAirports = _airportRepository.GetAll();
+            var amountOfAirports = allAirports.Count();
+            if ((amountOfAirports % pageSize) == 0)
+            {
+                totalPages = amountOfAirports / pageSize;
+            }
+            else
+            {
+                totalPages = amountOfAirports / pageSize + 1;
+            }
+            return allAirports.Skip(pageSize * (pageNumber - 1)).Take(pageSize);
         }
 
         public IEnumerable<string> GetAirportNames(string searchText)
