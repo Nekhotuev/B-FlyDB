@@ -41,7 +41,8 @@ textarea {
 /*footer zone*/
 #footer {
     bottom: 0;
-    background-color: #42b8ff;
+    /*background-color: #42b8ff;*/
+    background-color: #0096d6;
     position: fixed;
     width: 98.5%;
 }
@@ -71,7 +72,7 @@ textarea {
 }
 
 #topNavBar {
-    background-color: #42b8ff;
+    background-color: #0096d6;
     border: none;
     color: whitesmoke;
 }
@@ -84,7 +85,7 @@ textarea {
 .wrapper {
     display: flex;
     align-items: stretch;
-    background-color: #42b8ff;
+    background-color: #0096d6;
     width: 200px;
     /*height: 700px;*/
     position: fixed;
@@ -160,7 +161,7 @@ textarea {
 
     .nav-side-menu ul .sub-menu li:hover,
     .nav-side-menu li .sub-menu li:hover {
-        background-color: #0e8ff1;
+        background-color: #0096d6;
     }
 
 .nav-side-menu ul .sub-menu li:before,
@@ -191,7 +192,7 @@ textarea {
 
     .nav-side-menu li:hover {
         border-left: 3px solid #d19b3d;
-        background-color: #3ea5f4;
+        background-color: #0096d6;
         -webkit-transition: all 1s ease;
         -moz-transition: all 1s ease;
         -o-transition: all 1s ease;
