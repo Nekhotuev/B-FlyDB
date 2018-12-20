@@ -357,7 +357,6 @@
     <Content Include="Views\Classifiers\AirportIndex.cshtml" />
     <Content Include="Views\Classifiers\_SideBar.cshtml" />
     <Content Include="Views\Classifiers\Index.cshtml" />
-    <Content Include="Views\Classifiers\AirportSchemeCreate.cshtml" />
     <Content Include="Views\Classifiers\AirportDelete.cshtml" />
     <Content Include="Views\Classifiers\TerminalIndex.cshtml" />
   </ItemGroup>

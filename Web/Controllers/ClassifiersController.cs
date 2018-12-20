@@ -86,7 +86,7 @@ namespace Web.Controllers
         {
             AirportViewModel airport = new AirportViewModel();
             airport.Cities = _cityService.GetCities();
-            return View(airport);
+            return PartialView(airport);
         }
 
         // POST: Airports/Create
@@ -101,7 +101,7 @@ namespace Web.Controllers
                 return RedirectToAction("AirportIndexFull");
             }
 
-            return View(airport);
+            return PartialView(airport);
         }
         
         // GET: Airports/Edit/5
@@ -117,7 +117,7 @@ namespace Web.Controllers
                 return HttpNotFound();
             }
             airport.Cities = _cityService.GetCities();
-            return View(airport);
+            return PartialView(airport);
         }
 
         // POST: Airports/Edit/5
@@ -130,7 +130,7 @@ namespace Web.Controllers
                 _airportService.UpdateAirport(Mapper.Map<AirportViewModel, Airport>(airport));
                 return RedirectToAction("AirportIndexFull");
             }
-            return View(airport);
+            return PartialView(airport);
         }
         
         // GET: Airports/Delete/5

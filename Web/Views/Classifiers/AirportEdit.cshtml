@@ -14,7 +14,7 @@
         <div class="col-md-2">
             @Html.Partial("_SideBar")
         </div>
-        <div class="col-md-10">
+        <div class="col-md-10" id="bodycontent">
             <div class="row">
                 <div class="col-md-12"><h3>Edit @Model.Name airport</h3></div>
             </div>
@@ -55,8 +55,11 @@
                             <div class="form-group">
                                 <div class="col-md-offset-2 col-md-10">
                                     <input type="submit" value="Save" class="btn btn-success" />
-                                    <input type="button" value="Cancel" class="btn btn-default" onclick="location.href = '@Url.Action("AirportIndexFull", "Classifiers")'" />
+                                    @Ajax.ActionLink("Cancel", "AirportIndex", "Classifiers", new AjaxOptions { UpdateTargetId = "bodycontent" }, new { @class = "btn btn-default" })
+
+                                    @*!!!Don`t work!!!*@
                                     <input type="button" value="Delete" class="btn btn-danger" id="delete-button" />
+                                    @*!!!Don`t work!!!*@
                                 </div>
                             </div>
                         </div>

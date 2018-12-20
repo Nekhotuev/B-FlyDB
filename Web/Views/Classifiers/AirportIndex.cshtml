@@ -21,17 +21,17 @@
             </div>
             <div class="row createButton">
                 <div class="col-md-12">
-                    <input type="button" class="btn btn-default" value="Create new" onclick="location.href = '@Url.Action("AirportCreate", "Classifiers")'" />
+                    @Ajax.ActionLink("Create new", "AirportCreate", "Classifiers", new AjaxOptions { UpdateTargetId = "bodycontent" }, new { @class="btn btn-default" })
                 </div>
             </div>
-            @*add edit link method*@
+            @*add edit link method with Ajax.ActionLink*@
             <div class="row createButton">
                 <div class="col-md-2">
                     <input type="text" name="name" class="form-control" id="searchBox" data-autocomplete-source='@Url.Action("AirportSearch", "Classifiers")' />
                 </div>
                 <div class="col-md-2">
                     <input type="button" class="btn btn-default" value="Search" />
-                    @*<input type="button" class="btn btn-default" value="Search" onclick="location.href = '@Url.Action("AirportEdit", "Classifiers", new {id = item.Id})'" />*@
+                    @*@Ajax.ActionLink("Search", "AirportEdit", "Classifiers", new { id = item.id }, new AjaxOptions { UpdateTargetId = "bodycontent" }, new{ @class="btn btn-default" })*@
                 </div>
             </div>
             <div class="row">
@@ -44,14 +44,15 @@
                         </tr>
                         @foreach (var item in Model)
                         {
-                            <tr>
-                                <td class="linkedTableText" onclick="location.href = '@Url.Action("AirportEdit", "Classifiers", new {id = item.Id})'">
-                                    @Html.DisplayFor(modelItem => item.Name)
+                            <tr onclick="this.children[0].children[0].click();">
+                                <td class="linkedTableText">
+                                    @Ajax.ActionLink(item.Name, "AirportEdit", "Classifiers", new { id = item.Id }, new AjaxOptions { UpdateTargetId = "bodycontent" }, new{ style="display:none;" })
+                                    @item.Name
                                 </td>
-                                <td class="linkedTableText" onclick="location.href = '@Url.Action("AirportEdit", "Classifiers", new {id = item.Id})'">
+                                <td class="linkedTableText">
                                     @Html.DisplayFor(modelItem => item.Code)
                                 </td>
-                                <td class="linkedTableText" onclick="location.href = '@Url.Action("AirportEdit", "Classifiers", new {id = item.Id})'">
+                                <td class="linkedTableText">
                                     @Html.DisplayFor(modelItem => item.City.Name)
                                 </td>
                             </tr>
@@ -75,13 +76,11 @@
                         }
                         else
                         {
-                            @*<li class="page-item"><a class="page-link" href='@Url.Action("AirportIndexFull", "Classifiers", new {pageNumber = currentPage - 1})'>Previous</a></li>*@
                             <li>@Ajax.ActionLink("Previous", "AirportIndex", "Classifiers", new {pageNumber = currentPage - 1}, new AjaxOptions { UpdateTargetId = "bodycontent" }, new { @class = "page-item" })</li>
                         }
 
                         @for (int i = 1; i <= totalPages; i++)
                         {
-                            @*<li class="page-item"><a class="page-link" href='@Url.Action("AirportIndexFull", "Classifiers", new {pageNumber = i})'>@i</a></li>*@
                             <li>@Ajax.ActionLink(i.ToString(), "AirportIndex", "Classifiers", new {pageNumber = i}, new AjaxOptions { UpdateTargetId = "bodycontent" }, new { @class = "page-item" })</li>
                         }
 
@@ -91,7 +90,6 @@
                         }
                         else
                         {
-                            @*<li class="page-item"><a class="page-link" href='@Url.Action("AirportIndexFull", "Classifiers", new {pageNumber = currentPage + 1})'>Next</a></li>*@
                             <li>@Ajax.ActionLink("Next", "AirportIndex", "Classifiers", new {pageNumber = currentPage + 1}, new AjaxOptions { UpdateTargetId = "bodycontent" }, new { @class = "page-item" })</li>
                         }
                     </ul>
@@ -99,11 +97,11 @@
                     else
                     {
                     <ul class="pagination">
-                        <li class="page-item"><a class="page-link" href="#">First</a></li>
-                        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                        <li>@Ajax.ActionLink("First", "AirportIndex", "Classifiers", new { pageNumber = 1 }, new AjaxOptions { UpdateTargetId = "bodycontent" }, new { @class = "page-item" })</li>
+                        <li>@Ajax.ActionLink("Pervious", "AirportIndex", "Classifiers", new { pageNumber = currentPage - 1 }, new AjaxOptions { UpdateTargetId = "bodycontent" }, new { @class = "page-item" })</li>
                         <li class="page-item disabled"><a class="page-link">@currentPage</a></li>
-                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                        <li class="page-item"><a class="page-link" href="#">Last</a></li>
+                        <li>@Ajax.ActionLink("Next", "AirportIndex", "Classifiers", new { pageNumber = currentPage + 1 }, new AjaxOptions { UpdateTargetId = "bodycontent" }, new { @class = "page-item" })</li>
+                        <li>@Ajax.ActionLink("Last", "AirportIndex", "Classifiers", new { pageNumber = totalPages }, new AjaxOptions { UpdateTargetId = "bodycontent" }, new { @class = "page-item" })</li>
                     </ul>
                     }
                 </div>
