@@ -6,9 +6,6 @@
     ViewBag.Title = "Edit " + @Model.Name;
 }
 
-<div id="modDialog" class="modal fade" >
-    <div id="dialogContent" class="modal-dialog"></div>
-</div>
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-2">
@@ -56,10 +53,7 @@
                                 <div class="col-md-offset-2 col-md-10">
                                     <input type="submit" value="Save" class="btn btn-success" />
                                     @Ajax.ActionLink("Cancel", "AirportIndex", "Classifiers", new AjaxOptions { UpdateTargetId = "bodycontent" }, new { @class = "btn btn-default" })
-
-                                    @*!!!Don`t work!!!*@
-                                    <input type="button" value="Delete" class="btn btn-danger" id="delete-button" />
-                                    @*!!!Don`t work!!!*@
+                                    @Ajax.ActionLink("Delete", "AirportDelete", "Classifiers", new { id = Model.Id }, new AjaxOptions { UpdateTargetId = "bodycontent" }, new { @class = "btn btn-danger" })
                                 </div>
                             </div>
                         </div>
@@ -69,18 +63,3 @@
         </div>
     </div>
 </div>
-
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-    @Scripts.Render("~/bundles/deletePopUp")
-
-    <script type="text/javascript">
-        showDialog("#delete-button",
-            '@Url.Action("AirportDelete", "Classifiers", new {id = @Model.Id})',
-            '#dialogContent',
-            '#modDialog',
-            'show');
-        
-    </script>
-}
