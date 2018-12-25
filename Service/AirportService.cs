@@ -10,6 +10,7 @@ namespace Service
     public interface IAirportService
     {
         Airport GetAirport(int id);
+        int GetAirportIdByName(string name);
         IEnumerable<Airport> GetAirports();
         IEnumerable<Airport> GetAirports(string searchText);
         IEnumerable<Airport> GetAirports(int pageNumber, int pageSize, out int totalPages);
@@ -41,6 +42,18 @@ namespace Service
         public Airport GetAirport(int id)
         {
             return _airportRepository.GetById(id);
+        }
+
+        public int GetAirportIdByName(string name)
+        {
+            if (_airportRepository.GetAll().FirstOrDefault(a => a.Name.Equals(name)) != null)
+            {
+                return _airportRepository.GetAll().FirstOrDefault(a => a.Name.Equals(name)).Id;
+            }
+            else
+            {
+                return -1;
+            }
         }
 
         public IEnumerable<Airport> GetAirports()

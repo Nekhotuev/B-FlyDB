@@ -70,6 +70,20 @@ namespace Web.Controllers
             return Json(_airportService.GetAirportNames(term), JsonRequestBehavior.AllowGet);
         }
 
+        public RedirectToRouteResult AirportGetIdByName(string name)
+        {
+            //var value = searchBox.Value;
+            var airportId = _airportService.GetAirportIdByName(name);
+            if (airportId > 0)
+            {
+                return RedirectToAction("AirportEditFull", new { id = airportId });
+            }
+            else
+            {
+                return RedirectToAction("AirportIndexFull");
+            }
+        }
+
         public ActionResult AirportIndexFull(int pageNumber = 1)
         {
             int pageSize = 10;
@@ -118,6 +132,17 @@ namespace Web.Controllers
             }
             airport.Cities = _cityService.GetCities();
             return PartialView(airport);
+        }
+
+        public ActionResult AirportEditFull(int id)
+        {
+            AirportViewModel airport = Mapper.Map<Airport, AirportViewModel>(_airportService.GetAirport(id));
+            if (airport == null)
+            {
+                return HttpNotFound();
+            }
+            airport.Cities = _cityService.GetCities();
+            return View("AirportEdit", airport);
         }
 
         // POST: Airports/Edit/5

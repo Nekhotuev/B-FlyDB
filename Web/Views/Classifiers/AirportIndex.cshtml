@@ -24,14 +24,13 @@
                     @Ajax.ActionLink("Create new", "AirportCreate", "Classifiers", new AjaxOptions { UpdateTargetId = "bodycontent" }, new { @class="btn btn-default" })
                 </div>
             </div>
-            @*add edit link method with Ajax.ActionLink*@
             <div class="row createButton">
                 <div class="col-md-2">
-                    <input type="text" name="name" class="form-control" id="searchBox" data-autocomplete-source='@Url.Action("AirportSearch", "Classifiers")' />
+                    <input type="text" name="name" class="form-control" runat="server" id="searchBox" data-autocomplete-source='@Url.Action("AirportSearch", "Classifiers")' />
                 </div>
                 <div class="col-md-2">
-                    <input type="button" class="btn btn-default" value="Search" />
-                    @*@Ajax.ActionLink("Search", "AirportEdit", "Classifiers", new { id = item.id }, new AjaxOptions { UpdateTargetId = "bodycontent" }, new{ @class="btn btn-default" })*@
+                    @*pass name from data-autocomplete-source to parameter*@
+                    <input type="button" class="btn btn-default" value="Search" onclick="location.href = '@Url.Action("AirportGetIdByName", new {name = "Vnukovo"})'"/>
                 </div>
             </div>
             <div class="row">
