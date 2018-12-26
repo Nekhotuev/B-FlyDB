@@ -18,6 +18,7 @@ namespace Web.ViewModel
         public string FirstECSeat { set; get; }
         public string LastECSeat { get; set; }
         public double FuelConsumptionPerKm { get; set; }
+
         public virtual ICollection<Flight> Flights { get; set; }
     }
 }
