@@ -10,7 +10,7 @@ namespace Web.ViewModel
 
         [Required]
         [StringLength(5, ErrorMessage = "Length must be less than 5")]
-        [RegularExpression(@"[A-Za-z0-9]", ErrorMessage = "Must contain only chars and numbers")]
+        [RegularExpression(@"^[A-Za-z0-9]*", ErrorMessage = "Must contain only chars and numbers")]
         public string Name { get; set; }
         public virtual ICollection<AirportScheme> AirportSchemes { get; set; }
     }

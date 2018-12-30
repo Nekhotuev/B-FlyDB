@@ -9,7 +9,7 @@ namespace Web.ViewModel
 
         [Required]
         [StringLength(20, ErrorMessage = "Length must be less than 20")]
-        [RegularExpression(@"[A-Za-z]", ErrorMessage = "Must contain only chars")]
+        [RegularExpression(@"^[A-Za-z]*", ErrorMessage = "Must contain only chars")]
         public string Name { get; set; }
 
         public int CountryId { get; set; }

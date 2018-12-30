@@ -15,7 +15,7 @@ namespace Web.ViewModel
         public int PreBookedSeatRow { get; set; }
 
         [Required]
-        [RegularExpression(@"[A-Za-z]", ErrorMessage = "Must contain only chars")]
+        [RegularExpression(@"^[A-Za-z]*", ErrorMessage = "Must contain only chars")]
         public string PreBookedSeatColumn { get; set; }
 
         public bool Paid { get; set; }
@@ -23,7 +23,7 @@ namespace Web.ViewModel
         [Range(0, 200, ErrorMessage = "Range must be between 0 and 200")]
         public int RegisteredSeatRow { get; set; }
 
-        [RegularExpression(@"[A-Za-z]", ErrorMessage = "Must contain only chars")]
+        [RegularExpression(@"^[A-Za-z]*", ErrorMessage = "Must contain only chars")]
         public string RegisteredSeatColumn { get; set; }
 
         [Required]

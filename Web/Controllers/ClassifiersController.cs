@@ -115,7 +115,8 @@ namespace Web.Controllers
                 return RedirectToAction("AirportIndexFull");
             }
 
-            return PartialView(airport);
+            airport.Cities = _cityService.GetCities();
+            return View(airport);
         }
         
         // GET: Airports/Edit/5

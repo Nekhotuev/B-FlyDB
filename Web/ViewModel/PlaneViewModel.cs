@@ -9,15 +9,18 @@ namespace Web.ViewModel
         public int Id { get; set; }
 
         [Required]
-        [RegularExpression(@"[A-Za-z0-9]", ErrorMessage = "Must contain only chars and numbers")]
+        [StringLength(50, ErrorMessage = "Length must be less than 50")]
+        [RegularExpression(@"^[A-Za-z0-9]*", ErrorMessage = "Must contain only chars and numbers")]
         public string Manufacturer { get; set; }
 
         [Required]
-        [RegularExpression(@"[A-Za-z0-9]", ErrorMessage = "Must contain only chars and numbers")]
+        [StringLength(20, ErrorMessage = "Length must be less than 20")]
+        [RegularExpression(@"^[A-Za-z0-9]*", ErrorMessage = "Must contain only chars and numbers")]
         public string PlaneModel { get; set; }
 
         [Required]
-        [RegularExpression(@"[A-Za-z0-9]", ErrorMessage = "Must contain only chars and numbers")]
+        [StringLength(20, ErrorMessage = "Length must be less than 20")]
+        [RegularExpression(@"^[A-Za-z0-9]*", ErrorMessage = "Must contain only chars and numbers")]
         public string PlaneModification { get; set; }
 
         [Required]
@@ -29,11 +32,13 @@ namespace Web.ViewModel
         public int LastBCSeatRow { get; set; }
 
         [Required]
-        [RegularExpression(@"[A-Za-z]", ErrorMessage = "Must contain only chars")]
+        [StringLength(2, ErrorMessage = "Length must be less than 2")]
+        [RegularExpression(@"^[A-Za-z]*", ErrorMessage = "Must contain only chars")]
         public string FirstBCSeat { get; set; }
 
         [Required]
-        [RegularExpression(@"[A-Za-z]", ErrorMessage = "Must contain only chars")]
+        [StringLength(2, ErrorMessage = "Length must be less than 2")]
+        [RegularExpression(@"^[A-Za-z]*", ErrorMessage = "Must contain only chars")]
         public string LastBCSeat { get; set; }
 
         [Required]
@@ -45,11 +50,13 @@ namespace Web.ViewModel
         public int LastECSeatRow { get; set; }
 
         [Required]
-        [RegularExpression(@"[A-Za-z]", ErrorMessage = "Must contain only chars")]
+        [StringLength(2, ErrorMessage = "Length must be less than 2")]
+        [RegularExpression(@"^[A-Za-z]*", ErrorMessage = "Must contain only chars")]
         public string FirstECSeat { set; get; }
 
         [Required]
-        [RegularExpression(@"[A-Za-z]", ErrorMessage = "Must contain only chars")]
+        [StringLength(2, ErrorMessage = "Length must be less than 2")]
+        [RegularExpression(@"^[A-Za-z]*", ErrorMessage = "Must contain only chars")]
         public string LastECSeat { get; set; }
 
         [Required]

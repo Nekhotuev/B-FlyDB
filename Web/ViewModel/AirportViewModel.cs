@@ -10,12 +10,12 @@ namespace Web.ViewModel
 
         [Required(ErrorMessage = "Value must be entered")]
         [StringLength(20, ErrorMessage = "Length must be less than 20")]
-        [RegularExpression(@"[A-Za-z0-9]", ErrorMessage = "Must contain only chars and numbers")]
+        [RegularExpression(@"^[A-Za-z0-9]*", ErrorMessage = "Must contain only chars and numbers")]
         public string Name { get; set; }
 
         [Required]
         [StringLength(6, ErrorMessage = "Length must be less than 6")]
-        [RegularExpression(@"[A-Za-z0-9]", ErrorMessage = "Must contain only chars and numbers")]
+        [RegularExpression(@"^[A-Za-z0-9]*", ErrorMessage = "Must contain only chars and numbers")]
         public string Code { get; set; }
 
         public virtual City City { get; set; }
